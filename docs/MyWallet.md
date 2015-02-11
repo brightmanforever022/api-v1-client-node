@@ -1,7 +1,5 @@
 #Blockchain MyWallet Library
 
-
-
 ##Opening a wallet
 
 An instance of a wallet needs to be initialized before it can be used:
@@ -140,7 +138,7 @@ Responds with a partial Address Object (contains just the **address** property, 
 
 Parameters:
 
-* **label**: automatically set the label of the new address (*string*)
+* **label**: automatically set the label of the new address (*string*, optional)
 
 ###Archive address
 

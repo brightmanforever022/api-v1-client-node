@@ -1,0 +1,2 @@
+
+exports.MyWallet = require('./MyWallet');

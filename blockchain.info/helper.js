@@ -14,11 +14,18 @@ function appendToURL(param, val) {
 function makeRequest(url, callback) {
 	request(url, function(error, response, body) {
 		if (!error) {
-			var data = JSON.parse(body);
-			if (!data['error']) {
-				callback(null, data);
-			} else {
-				callback('err: ' + data['error']);
+			var data;
+			try {
+				data = JSON.parse(body);
+				if (typeof data !== 'object') throw 'received invalid json';
+			} catch (err) {
+				data = { error: err };
+			} finally {
+				if (!data['error']) {
+					callback(null, data);
+				} else {
+					callback('err: ' + data['error']);
+				}
 			}
 		} else {
 			callback(error);

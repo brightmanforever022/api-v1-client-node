@@ -1,6 +1,10 @@
 
 var request = require('request');
 
+// Global variables
+
+var root = 'https://blockchain.info/';
+
 // Helper functions
 
 // Makes adding to the request url neater/easier [stable]
@@ -32,5 +36,6 @@ function makeRequest(url, callback) {
 	});
 }
 
+exports.root = root;
 exports.appendToURL = appendToURL;
 exports.makeRequest = makeRequest;

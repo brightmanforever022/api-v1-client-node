@@ -1,6 +1,7 @@
 
 var MyWallet = require('./MyWallet');
 var helper = require('./helper');
+var root = helper.root;
 var appendToURL = helper.appendToURL;
 var makeRequest = helper.makeRequest;
 
@@ -8,7 +9,7 @@ function CreateWallet(pass, code, options) {
 
 	options = options || {};
 	this.pass = pass;
-	this.url = 'https://blockchain.info/api/v2/create_wallet?password=' + this.pass + '&api_code=' + code;
+	this.url = root + 'api/v2/create_wallet?password=' + this.pass + '&api_code=' + code;
 
 	this.url += appendToURL('priv', options.privateKey);
 	this.url += appendToURL('label', options.label);
@@ -22,7 +23,7 @@ CreateWallet.prototype.create = function(callback) {
 	makeRequest(this.url, callback);
 }
 
-// Creates a new wallet and returns an instance of MyWallet [stable, documented]
+// Creates a new wallet and returns an instance of MyWallet [untested]
 CreateWallet.prototype.open = function(callback) {
 	makeRequest(this.url, function(error, data) {
 		if (!error) {

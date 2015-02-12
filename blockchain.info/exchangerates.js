@@ -1,5 +1,6 @@
 
 var helper = require('./helper');
+var root = helper.root;
 var appendToURL = helper.appendToURL;
 var makeRequest = helper.makeRequest;
 
@@ -9,9 +10,9 @@ var exchangeRates = {};
 exchangeRates.getTicker = function(a, b) {
 	var args = arguments.length;
 	if (args === 1) { // a is callback, b is null
-		makeRequest('https://blockchain.info/ticker', a);
+		makeRequest(root + 'ticker', a);
 	} else if (args === 2) { // a is options, b is callback
-		makeRequest('https://blockchain.info/ticker', function(error, data) {
+		makeRequest(root + 'ticker', function(error, data) {
 			if (!error) {
 				if (a.currency !== undefined) {
 					if (typeof a.currency === 'string') {
@@ -49,7 +50,7 @@ exchangeRates.toBTC = function(amount, currency, callback) {
 		currency = 'USD';
 	}
 
-	var url = 'https://blockchain.info/tobtc?currency=' + currency + '&value=' + amount;
+	var url = root + 'tobtc?currency=' + currency + '&value=' + amount;
 
 	makeRequest(url, function(error, data) {
 		callback(error, +data);

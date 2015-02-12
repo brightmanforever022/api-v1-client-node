@@ -27,7 +27,7 @@ createWallet.create(callback);
 ```
 
 Creates a wallet from the parameters assigned in the constructor of CreateWallet.  
-Responds with a Wallet Object:
+Responds with a Wallet Object as the callback's data parameter.
 
 Wallet Object Properties:
 
@@ -44,4 +44,4 @@ createWallet.open(callback);
 ```
 
 Creates a wallet from the parameters assigned in the constructor of CreateWallet.  
-Responds with an instance of MyWallet ([docs](../docs/MyWallet.md))
+Responds with an instance of MyWallet ([docs](../docs/MyWallet.md)) as the callback's data parameter.

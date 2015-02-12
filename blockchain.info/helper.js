@@ -17,7 +17,6 @@ function makeRequest(url, callback) {
 			var data;
 			try {
 				data = JSON.parse(body);
-				if (typeof data !== 'object') throw 'received invalid json';
 			} catch (err) {
 				data = { error: err };
 			} finally {

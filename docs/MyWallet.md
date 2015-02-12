@@ -1,4 +1,4 @@
-#Blockchain MyWallet Library
+#Blockchain MyWallet Module
 
 ##Opening a wallet
 
@@ -10,19 +10,6 @@ var myWallet = new blockchain.MyWallet(identifier, password [, secondPassword]);
 
 The second password is optional. This setting can be turned on or off in your Blockchain wallet's account settings.  
 The MyWallet class supports method chaining.
-
-###Callback functions
-
-Callback functions are passed two parameters:
-
-* An **error** parameter (*string* or *null*) in the event that an error occurs
-* A **data** parameter (*json object, unless stated otherwise*) carrying the response
-
-Example:
-
-```
-var callback = function(error, data) { // Do something };
-```
 
 ###Response objects
 

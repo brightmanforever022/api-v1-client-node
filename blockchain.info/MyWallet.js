@@ -174,4 +174,6 @@ MyWallet.prototype.consolidate = function(days, callback) {
 	return this;
 }
 
+
+
 module.exports = MyWallet;

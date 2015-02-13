@@ -35,6 +35,7 @@ This module consists of these sub-modules:
 * ```CreateWallet``` ([docs](./docs/CreateWallet.md)) ([CreateWallet API][create_wallet_api])
 * ```exchangerates``` ([docs](./docs/ExchangeRates.md)) ([Exchange Rates API][exchange_rates_api])
 * ```statistics``` ([docs](./docs/Statistics.md)) ([Statistics API][statistics_api])
+* ```pushtx``` ([docs](./docs/pushtx.md)) ([pushtx][pushtx])
 
 
 
@@ -42,3 +43,4 @@ This module consists of these sub-modules:
 [create_wallet_api]: https://blockchain.info/api/create_wallet
 [exchange_rates_api]: https://blockchain.info/api/exchange_rates_api
 [statistics_api]: https://blockchain.info/api/charts_api
+[pushtx]: https://blockchain.info/pushtx

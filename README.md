@@ -34,9 +34,11 @@ This module consists of these sub-modules:
 * ```MyWallet``` ([docs](./docs/MyWallet.md)) ([MyWallet API][my_wallet_api])
 * ```CreateWallet``` ([docs](./docs/CreateWallet.md)) ([CreateWallet API][create_wallet_api])
 * ```exchangerates``` ([docs](./docs/ExchangeRates.md)) ([Exchange Rates API][exchange_rates_api])
+* ```statistics``` ([docs](./docs/Statistics.md)) ([Statistics API][statistics_api])
 
 
 
 [my_wallet_api]: https://blockchain.info/api/blockchain_wallet_api
 [create_wallet_api]: https://blockchain.info/api/create_wallet
 [exchange_rates_api]: https://blockchain.info/api/exchange_rates_api
+[statistics_api]: https://blockchain.info/api/charts_api

@@ -5,7 +5,7 @@
 An instance of CreateWallet needs to be initialized before it can be used:
 
 ```
-var createWallet = new blockchain.CreateWallet(password, api_code [, options]);
+var createWallet = new blockchain.CreateWallet(password, apiCode [, options]);
 ```
 
 The CreateWallet class supports method chaining.

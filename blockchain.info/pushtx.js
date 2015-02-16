@@ -6,7 +6,6 @@ var appendToURL = helper.appendToURL;
 
 var pushtx = {};
 
-// [untested]
 pushtx.pushtx = function(tx, apiCode, callback) {
 
 	var payload = {

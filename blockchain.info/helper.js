@@ -1,20 +1,14 @@
 
 var request = require('request');
 
-// Global variables
-
 var root = 'https://blockchain.info/';
 
-// Helper functions
-
-// Makes adding to the request url neater/easier [stable]
 function appendToURL(param, val) {
 	var str;
 	(val === undefined) ? str = '' : str = ('&' + param + '=' + val).toString();
 	return str;
 }
 
-// Handles requests and errors [probably stable]
 function makeRequest(url, callback) {
 	request(url, function(error, response, body) {
 		if (!error) {

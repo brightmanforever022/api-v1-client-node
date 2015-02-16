@@ -6,7 +6,6 @@ var makeRequest = helper.makeRequest;
 
 var exchangeRates = {};
 
-// Gets the price of Bitcoin from the Blockchain ticker [stable, documented]
 exchangeRates.getTicker = function(a, b) {
 	var args = arguments.length;
 	if (args === 1) { // a is callback, b is null
@@ -42,7 +41,6 @@ exchangeRates.getTicker = function(a, b) {
 	return exchangeRates;
 }
 
-// Converts an amount of money to BTC, defaults to USD [stable, documented]
 exchangeRates.toBTC = function(amount, currency, callback) {
 
 	if (arguments.length === 2) {

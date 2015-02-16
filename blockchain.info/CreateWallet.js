@@ -18,12 +18,10 @@ function CreateWallet(pass, code, options) {
 	return this;
 }
 
-// Creates a new wallet and returns a Wallet Object [stable, documented]
 CreateWallet.prototype.create = function(callback) {
 	makeRequest(this.url, callback);
 }
 
-// Creates a new wallet and returns an instance of MyWallet [untested]
 CreateWallet.prototype.open = function(callback) {
 	makeRequest(this.url, function(error, data) {
 		if (!error) {

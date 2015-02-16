@@ -13,72 +13,9 @@ function MyWallet(guid, pass, pass2) {
 	this.pass = pass;
 	this.pass2 = pass2;
 
-	// Lists out addresses of wallet, or single aspects of an address [stable]
-	// this.getAddresses = function(a, b) {
-	// 	var url = 'https://blockchain.info/merchant/' + this.guid + '/list?password=' + this.pass,
-	// 	args = arguments.length;
-	// 	if (args === 1) { // a is callback, b is null [stable]
-	// 		makeRequest(url, a);
-	// 	} else if (args === 2) { // a is param, b is callback [stable]
-	// 		makeRequest(url, function(error, data) {
-	// 			if (!error) {
-	// 				var attributes = [];
-	// 				data.addresses.forEach(function(value) {
-	// 					attributes.push(value[a]);
-	// 				});
-	// 				b(null, attributes);
-	// 			} else {
-	// 				b(error);
-	// 			}
-	// 		});
-	// 	}
-	// 	return thisWallet;
-	// }
-
-	// Gets the balance of one specific address [stable]
-	// this.getAddressBalance = function(address, confirmations, callback) {
-	// 	var url = 'https://blockchain.info/merchant/' + this.guid + '/address_balance?password=' + this.pass;
-	// 	url += appendToURL('address', address);
-	// 	url += appendToURL('confirmations', confirmations);
-	// 	makeRequest(url, callback);
-	// 	return thisWallet;
-	// }
-
-	// Gets the balance of the whole wallet, an address, or an array of addresses [stable]
-	// this.getBalance = function(a, b) {
-	// 	var args = arguments.length,
-	// 	defaultConfirmations = 3;
-
-	// 	if(args === 1) { // a is the callback, b is null [stable]
-
-	// 		var url = 'https://blockchain.info/merchant/' + this.guid + '/balance?password=' + this.pass;
-	// 		makeRequest(url, a);
-
-	// 	} else if (args === 2 && typeof a === 'string') { // a is address, b is callback [stable]
-
-	// 		thisWallet.getAddressBalance(a, defaultConfirmations, b);
-
-	// 	} else if (args === 2 && typeof a === 'object') { // a is options, b is callback [stable]
-
-	// 		var confirmations = a.confirmations || defaultConfirmations;
-
-	// 		if (typeof a.addresses === 'object') {
-	// 			a.addresses.forEach(function(value, index, array) {
-	// 				thisWallet.getAddressBalance(value, confirmations, b);
-	// 			});
-	// 		} else if (a.addresses === undefined) {
-	// 			thisWallet.getAddressBalance(a.address, confirmations, b);
-	// 		}
-
-	// 	}
-	// 	return thisWallet;
-	// }
-
 	return this;
-
 }
 
-// Sends BTC from your wallet [stable, documented]
 MyWallet.prototype.send = function(options, callback) {
 	var url = root + 'merchant/' + this.guid + '/payment?password=' + this.pass;
 
@@ -101,7 +38,6 @@ MyWallet.prototype.send = function(options, callback) {
 	return this;
 }
 
-// Sends bitcoin to multiple addresses [stable, documented]
 MyWallet.prototype.sendMany = function(options, recipients, callback) {
 	var args = arguments.length
 	url = root + 'merchant/' + this.guid + '/sendmany?password=' + this.pass;
@@ -133,7 +69,6 @@ MyWallet.prototype.sendMany = function(options, recipients, callback) {
 	return this;
 }
 
-// Gets the balance of the whole wallet [stable, documented]
 MyWallet.prototype.getBalance = function(inBTC, callback) {
 	var url = root + 'merchant/' + this.guid + '/balance?password=' + this.pass,
 	conversion = 1;
@@ -152,14 +87,12 @@ MyWallet.prototype.getBalance = function(inBTC, callback) {
 	return this;
 }
 
-// Generates a list of address objects [stable, documented]
 MyWallet.prototype.listAddresses = function(callback) {
 	var url = root + 'merchant/' + this.guid + '/list?password=' + this.pass;
 	makeRequest(url, callback);
 	return this;
 }
 
-// Gets the balance of one specific address [stable, documented]
 MyWallet.prototype.getAddress = function(address, confirmations, callback) {
 	var url = root + 'merchant/' + this.guid + '/address_balance?password=' + this.pass;
 
@@ -174,7 +107,6 @@ MyWallet.prototype.getAddress = function(address, confirmations, callback) {
 	return this;
 }
 
-// Creates a new address, returns the address object [stable, documented]
 MyWallet.prototype.newAddress = function(label, callback) {
 
 	var url = root + 'merchant/' + this.guid + '/new_address?password=' + this.pass;
@@ -192,7 +124,6 @@ MyWallet.prototype.newAddress = function(label, callback) {
 	return this;
 }
 
-// Archive an address [stable, documented]
 MyWallet.prototype.archiveAddress = function(address, callback) {
 
 	var url = root + 'merchant/' + this.guid + '/archive_address?password=' + this.pass;
@@ -205,7 +136,6 @@ MyWallet.prototype.archiveAddress = function(address, callback) {
 	return this;
 }
 
-// Unarchive an address [stable, documented]
 MyWallet.prototype.unarchiveAddress = function(address, callback) {
 
 	var url = root + 'merchant/' + this.guid + '/unarchive_address?password=' + this.pass;
@@ -218,7 +148,6 @@ MyWallet.prototype.unarchiveAddress = function(address, callback) {
 	return this;
 }
 
-// Consolidates addresses that have not been used in the past X days [probably stable, documented]
 MyWallet.prototype.consolidate = function(days, callback) {
 
 	var url = root + 'merchant/' + this.guid + '/auto_consolidate?password=' + this.pass;
@@ -236,10 +165,4 @@ MyWallet.prototype.consolidate = function(days, callback) {
 	return this;
 }
 
-
-
 module.exports = MyWallet;
-
-
-
-

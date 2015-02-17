@@ -1,8 +1,8 @@
 {
   "name": "blockchain.info",
-  "description": "Blockchain API",
+  "description": "Blockchain API Node",
   "author": "Justin Tormey",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "dependencies": {
     "request": "^2.53.0"
   },

@@ -1,8 +1,8 @@
-#Blockchain API Library (Node, v1)
+# Blockchain API Library (Node, v1)
 
 An official Node module for interacting with the Blockchain.info API.
 
-###Getting started
+## Getting started
 
 Installation via NPM:
 
@@ -14,7 +14,7 @@ $ npm install blockchain.info
 var blockchain = require('blockchain.info');
 ```
 
-###Callback functions
+## Callback functions
 
 Callback functions are passed two parameters:
 
@@ -27,7 +27,7 @@ Example:
 var callback = function(error, data) { // Do something };
 ```
 
-###Documentation
+## Documentation
 
 This module consists of these sub-modules:
 

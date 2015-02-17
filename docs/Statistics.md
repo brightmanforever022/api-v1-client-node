@@ -1,4 +1,4 @@
-#Blockchain Statistics Module
+# Blockchain Statistics Module
 
 This module is for getting recent and past stats on Bitcoin.  
 To use, first import the module from `blockchain`:
@@ -7,9 +7,9 @@ To use, first import the module from `blockchain`:
 var statistics = blockchain.statistics;
 ```
 
-##Methods
+## Methods
 
-###get
+### get
 
 Usage:
 
@@ -24,7 +24,7 @@ Options (optional):
 * **apiCode**: call the api with your api code if you have one (*string*)
 * **stat**: get only one specific stat, rather than the entire json object response (*string*, ex: "n_btc_mined")
 
-###getChartData
+### getChartData
 
 Usage:
 

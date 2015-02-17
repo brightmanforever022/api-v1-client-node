@@ -1,6 +1,6 @@
-#Blockchain Receive Module
+# Blockchain Receive Module
 
-##Creating a receiving address
+## Creating a receiving address
 
 An instance of Receive needs to be initialized before it can be used:
 
@@ -20,9 +20,9 @@ Options (optional):
 * **apiCode**: api code, if you have one (*string*)
 * **confirmations**: minimum number of confirmations before becoming able to receive callback url (*number*, defaults to 6)
 
-##Methods
+## Methods
 
-###create
+### create
 
 Usage:
 
@@ -44,7 +44,7 @@ Response Object:
 * **input_address**: the forwarding address (*string*)
 * **callback_url**: the callback url (*string*)
 
-###listen
+### listen
 
 Usage:
 

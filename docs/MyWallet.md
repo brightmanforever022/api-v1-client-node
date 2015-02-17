@@ -1,6 +1,6 @@
-#Blockchain MyWallet Module
+# Blockchain MyWallet Module
 
-##Opening a wallet
+## Opening a wallet
 
 An instance of a wallet needs to be initialized before it can be used:
 
@@ -11,7 +11,7 @@ var myWallet = new blockchain.MyWallet(identifier, password [, secondPassword]);
 The second password is optional. This setting can be turned on or off in your Blockchain wallet's account settings.  
 The MyWallet class supports method chaining.
 
-###Response objects
+### Response objects
 
 The data parameter passed to callback functions will be either a Payment Response Object or an Address Object. Each method specifies which one it will respond with, given that no error occurs.
 
@@ -28,9 +28,9 @@ Address Object Properties:
 * **label**: the address label (*string* or *null*)
 * **total_received**: the total satoshi ever received by the address (*number*)
 
-##Methods
+## Methods
 
-###Send Bitcoin
+### Send Bitcoin
 
 Usage:
 
@@ -50,7 +50,7 @@ Options:
 * **fee**: transaction fee value *in satoshi*, unless **inBTC** is set to **true** (*number*, optional, defaults to 0.0001btc)
 * **note**: public note to include with transaction (*string*, optional, transactions must be > 0.005btc)
 
-###Send to multiple addresses
+### Send to multiple addresses
 
 Usage:
 
@@ -73,7 +73,7 @@ Options (optional):
 * **fee**: transaction fee value *in satoshi* (*number*, defaults to 0.0001btc)
 * **note**: public note to include with transaction (*string*, transactions must be > 0.005btc)
 
-###Get wallet balance
+### Get wallet balance
 
 Usage:
 
@@ -87,7 +87,7 @@ Parameters:
 
 * **inBTC**: if set to true, the amount returned will be denoted in BTC rather than satoshi (*boolean*, defaults to **false**)
 
-###List wallet addresses
+### List wallet addresses
 
 Usage:
 
@@ -97,7 +97,7 @@ myWallet.listAddresses(callback);
 
 Responds with an object that has an **addresses** property. This property is an **array** of Address Objects.
 
-###Get address
+### Get address
 
 Usage:
 
@@ -112,7 +112,7 @@ Parameters:
 * **address**: the name of the address (*string*, required)
 * **confirmations**: minimum number of confirmations to check for (*number*, optional, defaults to 6)
 
-###Create new address
+### Create new address
 
 Usage:
 
@@ -127,7 +127,7 @@ Parameters:
 
 * **label**: automatically set the label of the new address (*string*, optional)
 
-###Archive address
+### Archive address
 
 Usage:
 
@@ -142,7 +142,7 @@ Parameters:
 
 * **address**: the name of the address to archive (*string*, required)
 
-###Unarchive address
+### Unarchive address
 
 Usage:
 
@@ -157,7 +157,7 @@ Parameters:
 
 * **address**: the name of the address to unarchive (*string*, required)
 
-###Consolidating addresses
+### Consolidating addresses
 
 Usage:
 

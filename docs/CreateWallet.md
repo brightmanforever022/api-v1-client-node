@@ -1,6 +1,6 @@
-#Blockchain CreateWallet Module
+# Blockchain CreateWallet Module
 
-##Opening a wallet
+## Opening a wallet
 
 An instance of CreateWallet needs to be initialized before it can be used:
 
@@ -16,9 +16,9 @@ Options:
 * **label**: a label to add to the first address in the wallet (*string*)
 * **email**: an email address to associate with this wallet (*string*)
 
-##Methods
+## Methods
 
-###Create
+### Create
 
 Usage:
 
@@ -35,7 +35,7 @@ Wallet Object Properties:
 * **address**: the first auto-generated address (*string*)
 * **link**: the url address of the the new wallet (*string*)
 
-###Open
+### Open
 
 Usage:
 

@@ -1,6 +1,6 @@
-#Blockchain ExchangeRates Module
+# Blockchain ExchangeRates Module
 
-##Accessing the module
+## Accessing the module
 
 Import the module from ```blockchain```:
 
@@ -8,9 +8,9 @@ Import the module from ```blockchain```:
 var exchangeRates = blockchain.exchangeRates;
 ```
 
-##Methods
+## Methods
 
-###getTicker
+### getTicker
 
 Usage:
 
@@ -26,7 +26,7 @@ Options (optional):
 * **currency**: specify which currency or currencies to get data on (*string* or *array*, required when using the **property** option)
 * **property**: only get the data on this property (*string*: '15m', 'last', 'buy', 'sell', 'symbol')
 
-###toBTC
+### toBTC
 
 Usage:
 

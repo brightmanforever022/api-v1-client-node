@@ -1,4 +1,4 @@
-#Blockchain Push Transaction Module
+# Blockchain Push Transaction Module
 
 Importing from `blockchain`:
 
@@ -6,9 +6,9 @@ Importing from `blockchain`:
 var pushtx = blockchain.pushtx;
 ```
 
-##Methods
+## Methods
 
-###pushtx
+### pushtx
 
 Usage:
 

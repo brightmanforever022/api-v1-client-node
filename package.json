@@ -2,7 +2,7 @@
   "name": "blockchain.info",
   "description": "A Node implementation for accessing the Blockchain.info API.",
   "author": "Justin Tormey",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "repository": {
     "type": "git",

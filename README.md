@@ -31,20 +31,20 @@ var callback = function(error, data) { // Do something };
 
 This module consists of these sub-modules:
 
-* ```MyWallet``` ([docs](./docs/MyWallet.md)) ([MyWallet API][my_wallet_api])
+* ```blockexplorer``` ([docs](./docs/BlockExplorer.md)) ([Block Explorer API][blockexplorer_api])
 * ```CreateWallet``` ([docs](./docs/CreateWallet.md)) ([CreateWallet API][create_wallet_api])
 * ```exchangerates``` ([docs](./docs/ExchangeRates.md)) ([Exchange Rates API][exchange_rates_api])
-* ```statistics``` ([docs](./docs/Statistics.md)) ([Statistics API][statistics_api])
-* ```blockexplorer``` ([docs](./docs/BlockExplorer.md)) ([Block Explorer API][blockexplorer_api])
-* ```pushtx``` ([docs](./docs/pushtx.md)) ([pushtx][pushtx])
+* ```MyWallet``` ([docs](./docs/MyWallet.md)) ([MyWallet API][my_wallet_api])
+* ```pushtx``` ([docs](./docs/PushTx.md)) ([pushtx][pushtx])
 * ```Receive``` ([docs](./docs/Receive.md)) ([Receive API][receive_api])
+* ```statistics``` ([docs](./docs/Statistics.md)) ([Statistics API][statistics_api])
 
 
 
-[my_wallet_api]: https://blockchain.info/api/blockchain_wallet_api
+[blockexplorer_api]: https://blockchain.info/api/blockchain_api
 [create_wallet_api]: https://blockchain.info/api/create_wallet
 [exchange_rates_api]: https://blockchain.info/api/exchange_rates_api
-[statistics_api]: https://blockchain.info/api/charts_api
-[blockexplorer_api]: https://blockchain.info/api/blockchain_api
+[my_wallet_api]: https://blockchain.info/api/blockchain_wallet_api
 [pushtx]: https://blockchain.info/pushtx
 [receive_api]: https://blockchain.info/api/api_receive
+[statistics_api]: https://blockchain.info/api/charts_api

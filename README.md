@@ -37,6 +37,7 @@ This module consists of these sub-modules:
 * ```statistics``` ([docs](./docs/Statistics.md)) ([Statistics API][statistics_api])
 * ```blockexplorer``` ([docs](./docs/BlockExplorer.md)) ([Block Explorer API][blockexplorer_api])
 * ```pushtx``` ([docs](./docs/pushtx.md)) ([pushtx][pushtx])
+* ```Receive``` ([docs](./docs/Receive.md)) ([Receive API][receive_api])
 
 
 
@@ -46,3 +47,4 @@ This module consists of these sub-modules:
 [statistics_api]: https://blockchain.info/api/charts_api
 [blockexplorer_api]: https://blockchain.info/api/blockchain_api
 [pushtx]: https://blockchain.info/pushtx
+[receive_api]: https://blockchain.info/api/api_receive

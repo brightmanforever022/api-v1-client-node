@@ -1,6 +1,7 @@
-exports.MyWallet = require('./MyWallet');
+exports.blockexplorer = require('./blockexplorer');
 exports.CreateWallet = require('./CreateWallet');
 exports.exchangeRates = require('./exchangerates');
-exports.statistics = require('./statistics');
-exports.blockexplorer = require('./blockexplorer');
+exports.MyWallet = require('./MyWallet');
 exports.pushtx = require('./pushtx');
+exports.Receive = require('./Receive');
+exports.statistics = require('./statistics');

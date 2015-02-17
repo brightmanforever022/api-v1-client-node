@@ -2,7 +2,7 @@
   "name": "blockchain.info",
   "description": "Blockchain API",
   "author": "Justin Tormey",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "dependencies": {
     "request": "^2.53.0"
   },

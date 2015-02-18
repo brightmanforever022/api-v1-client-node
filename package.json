@@ -1,9 +1,15 @@
 {
   "name": "blockchain.info",
-  "description": "A Node implementation for accessing the Blockchain.info API.",
-  "author": "Justin Tormey",
   "version": "1.0.3",
+  "description": "A Node implementation for accessing the Blockchain.info API.",
+  "author": {
+    "name": "Blockchain.info",
+    "url": "https://blockchain.info"
+  },
   "main": "index.js",
+  "contributors": [
+    "Justin Tormey"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/blockchain/api-client-v1-node.git"

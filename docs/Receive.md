@@ -5,14 +5,14 @@
 An instance of Receive needs to be initialized before it can be used:
 
 ```
-var receive = new blockchain.Receive(address, callbackURL [, options]);
+var receive = new blockchain.Receive([options,] callbackURL);
 ```
 
 The Receive class supports method chaining.
 
 Parameters:
 
-* **address**: the address for payments to be forwarded to (*string*)
+* **options**: set optional properties on initialization (*object*)
 * **callbackURL**: the url to which the callback should be sent (*string*)
 
 Options (optional):
@@ -27,14 +27,15 @@ Options (optional):
 Usage:
 
 ```
-receive.create([parameters,] callback);
+receive.create(address, [parameters,] callback);
 ```
 
-Creates the input address, which can then forward to the address passed into the constructor.  
+Creates a new forwarding address.    
 Responds with an *object* in the data parameter of the callback.
 
 Parameters:
 
+* **address**: the address that payments will be forwarded to (*string*, required)
 * **parameters**: any custom parameters to be returned with the callback url go in here (*object*, optional)
 
 Response Object:
@@ -56,7 +57,7 @@ Parameters:
 
 * **server**: http server (*object*, required)
 
-Listens for when the callback url sends data to the server.  
+Listens for when the callback url sends data back to the server. Occurs whenever a transaction to the forwarding address happens.  
 Responds with an *object* in the data parameter of the callback.
 
 Response Object:
@@ -68,3 +69,17 @@ Response Object:
 * **input_transaction_hash**: the original hash, before forwarding (*string*)
 * **destination_address**: the destination bitcoin address (*string*)
 * **{Custom Parameter}**: any parameters included in the callback url that have been passed back
+
+### setConfirmations
+
+Usage:
+
+```
+receive.setConfirmations(confirmations);
+```
+
+Sets the minimum number of confirmations to look for returning callback urls.
+
+Parameters:
+
+* **confirmations**: specify the minimum number of confirmations (*number*, required)

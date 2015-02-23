@@ -8,7 +8,10 @@
   },
   "main": "index.js",
   "contributors": [
-    "Justin Tormey"
+    "Justin Tormey <justin@blockchain.com>"
+  ],
+  "maintainers": [
+    "justintormey <justin@blockchain.com>"
   ],
   "repository": {
     "type": "git",

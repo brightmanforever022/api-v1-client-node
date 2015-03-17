@@ -55,6 +55,21 @@ Options (optional):
 * **offset**: skip the first n transactions (*number*)
 * **apiCode**: api code (*string*)
 
+### getMultiAddress
+
+Usage:
+
+```
+blockexplorer.getMultiAddress(addresses, [apiCode,] callback);
+```
+
+Get information on multiple addresses.
+
+Parameters:
+
+* **addresses**: *array* of addresses or an xPub (extended public key) *string*
+* **apiCode**: API code (*string*, optional)
+
 ### getUnspentOutputs
 
 Usage:

@@ -22,6 +22,7 @@
     "bitcoin"
   ],
   "dependencies": {
+    "q": "^1.4.1",
     "request": "^2.53.0",
     "request-promise": "^0.4.3",
     "url": "^0.11.0",

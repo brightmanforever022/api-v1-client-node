@@ -10,8 +10,8 @@ function MyWallet(guid, password, options) {
 		return {
 			guid						: guid,
 			password				: password,
-			second_password	: options.second_password,
-			api_code				: options.api_code
+			secondPassword	: options.secondPassword,
+			apiCode				  : options.apiCode
 		};
 	};
 	return this;
@@ -82,19 +82,19 @@ MyWallet.prototype.consolidate = function (options) {
 	return api.request('consolidate', params);
 };
 
-MyWallet.create = function (password, api_code, options) {
+MyWallet.create = function (password, apiCode, options) {
 	options = options || {};
 	var params = {
 		password: password,
-		apiCode: 	api_code,
+		apiCode: 	apiCode,
 		priv: 		options.priv,
 		label:		options.label,
 		email:		options.email
 	};
 	return api.request('create', params).then(function (response) {
-		var walletOptions = { api_code: api_code };
+		var walletOptions = { apiCode: apiCode };
 		return new MyWallet(response.guid, password, walletOptions);
 	});
-};
+} ;
 
 module.exports = MyWallet;

@@ -4,47 +4,42 @@ An official Node module for interacting with the Blockchain.info API.
 
 ## Getting started
 
-Installation via NPM:
+Installation via [npm](https://npmjs.com):
 
-```
-$ npm install blockchain.info
+```sh
+$ npm install --save blockchain.info
 ```
 
-```
+Importing:
+
+```js
 var blockchain = require('blockchain.info');
 ```
 
-## Callback functions
+## Responses
 
-Callback functions are passed two parameters:
-
-* An **error** parameter (*string* or *null*) in the event that an error occurs
-* A **data** parameter (*json object, unless stated otherwise*) carrying the response
-
-Example:
-
-```
-var callback = function(error, data) { // Do something };
-```
+All functions in this module return a JavaScript [promise](https://promisesaplus.com/) for handling asynchronous actions.
 
 ## Documentation
 
 This module consists of these sub-modules:
 
-* ```blockexplorer``` ([docs](./docs/BlockExplorer.md)) ([Block Explorer API][blockexplorer_api])
-* ```CreateWallet``` ([docs](./docs/CreateWallet.md)) ([CreateWallet API][create_wallet_api])
-* ```exchangerates``` ([docs](./docs/ExchangeRates.md)) ([Exchange Rates API][exchange_rates_api])
-* ```MyWallet``` ([docs](./docs/MyWallet.md)) ([MyWallet API][my_wallet_api])
-* ```pushtx``` ([docs](./docs/PushTx.md)) ([pushtx][pushtx])
-* ```Receive``` ([docs](./docs/Receive.md)) ([Receive API][receive_api])
-* ```statistics``` ([docs](./docs/Statistics.md)) ([Statistics API][statistics_api])
+  * [`MyWallet`](./MyWallet) - Interact with or create a Blockchain Wallet
+  * [`blockexplorer`](./blockexplorer) - View data for addresses, blocks, transactions, and more
+  * [`exchange`](./exchange) - Get real-time bitcoin exchange rates
+  * [`pushtx`](./pushtx) - Push custom transactions
+  * [`statistics`](./statistics) - Fetch historical blockchain data and statistics
 
+You can access sub-modules from the properties of the imported main module, or by importing them individually.
 
+Individual import:
 
-[blockexplorer_api]: https://blockchain.info/api/blockchain_api
-[create_wallet_api]: https://blockchain.info/api/create_wallet
-[exchange_rates_api]: https://blockchain.info/api/exchange_rates_api
-[my_wallet_api]: https://blockchain.info/api/blockchain_wallet_api
-[pushtx]: https://blockchain.info/pushtx
-[receive_api]: https://blockchain.info/api/api_receive
-[statistics_api]: https://blockchain.info/api/charts_api
+```js
+var MyWallet = require('blockchain.info/MyWallet');
+```
+
+Property import:
+
+```js
+var MyWallet = require('blockchain.info').MyWallet;
+```

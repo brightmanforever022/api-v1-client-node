@@ -1,6 +1,14 @@
 'use strict';
 
-var api = require('../api');
+var API	        = require('../api')
+  , UrlPattern  = require('url-pattern');
+
+var	endpoints	= {
+  charts	: new UrlPattern('/charts/:type?format=json(&api_code=:apiCode)'),
+  stats   : new UrlPattern('/stats?format=json(&api_code=:apiCode)')
+};
+
+var api = new API(endpoints);
 
 module.exports = {
 	get 					: get,

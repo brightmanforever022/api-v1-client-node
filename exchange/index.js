@@ -1,6 +1,14 @@
 'use strict';
 
-var api = require('../api');
+var API 				= require('../api')
+	, UrlPattern	= require('url-pattern');
+
+var endpoints	= {
+  ticker	: new UrlPattern('/ticker'),
+  tobtc   : new UrlPattern('/tobtc?value=:value&currency=:currency')
+};
+
+var api = new API(endpoints);
 
 module.exports = {
 	getTicker	: getTicker,

@@ -1,6 +1,8 @@
 'use strict';
 
-var api = require('../api');
+var API 			= require('../api')
+ 	, endpoints	= require('./endpoints')
+	, api 			= new API(endpoints);
 
 module.exports = {
 	getBlock					: getBlock,

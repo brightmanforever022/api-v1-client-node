@@ -1,6 +1,13 @@
 'use strict';
 
-var api = require('../api');
+var API					= require('../api')
+	, UrlPattern	= require('url-pattern');
+
+var endpoints = {
+  pushtx	: new UrlPattern('/pushtx/:payload')
+};
+
+var api = API(endpoints);
 
 module.exports = {
 	pushtx: pushtx

@@ -17,46 +17,55 @@ module.exports = {
 	getInventoryData	: getInventoryData
 };
 
-function getBlock(blockHash) {
-	return api.request('rawblock', { hash: blockHash });
+function getBlock(blockHash, options) {
+  options = options || {};
+	return api.request('rawblock', { hash: blockHash, api_code: options.api_code });
 }
 
-function getTx(txHash) {
-	return api.request('rawtx', { hash: txHash });
+function getTx(txHash, options) {
+  options = options || {};
+	return api.request('rawtx', { hash: txHash, api_code: options.api_code });
 }
 
-function getBlockHeight(blockHeight) {
-	return api.request('blockHeight', { height: blockHeight });
+function getBlockHeight(blockHeight, options) {
+  options = options || {};
+	return api.request('blockHeight', { height: blockHeight, api_code: options.api_code });
 }
 
 function getAddress(address, options) {
 	options = options || {};
-	var params = { address: address, limit: options.limit, offset: options.offset };
+	var params = { address: address, limit: options.limit, offset: options.offset, api_code: options.api_code };
 	return api.request('address', params);
 }
 
-function getMultiAddress(addresses) {
+function getMultiAddress(addresses, options) {
+  options = options || {};
 	addresses = (addresses instanceof Array ? addresses : [addresses]).join('|');
-	return api.request('multiaddr', { active: addresses });
+	return api.request('multiaddr', { active: addresses, api_code: options.api_code });
 }
 
-function getUnspentOutputs(addresses) {
+function getUnspentOutputs(addresses, options) {
+  options = options || {};
 	addresses = (addresses instanceof Array ? addresses : [addresses]).join('|');
-	return api.request('unspent', { active: addresses });
+	return api.request('unspent', { active: addresses, api_code: options.api_code });
 }
 
-function getLatestBlock() {
-	return api.request('latestblock');
+function getLatestBlock(options) {
+  options = options || {};
+	return api.request('latestblock', options);
 }
 
-function getUnconfirmedTx() {
-	return api.request('unconfTxs');
+function getUnconfirmedTx(options) {
+  options = options || {};
+	return api.request('unconfTxs', options);
 }
 
-function getBlocks(time) {
-	return api.request('blocks', { time: time });
+function getBlocks(time, options) {
+  options = options || {};
+	return api.request('blocks', { time: time, api_code: options.api_code });
 }
 
-function getInventoryData(hash) {
-	return api.request('inv', { hash: hash });
+function getInventoryData(hash, options) {
+  options = options || {};
+	return api.request('inv', { hash: hash, api_code: options.api_code });
 }

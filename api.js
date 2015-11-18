@@ -23,7 +23,7 @@ API.prototype.request = function (api, options) {
   try {
   	var endpoint	= this.endpoints[api].stringify(options)
   		, apiurl		= url.resolve(this.rootUrl, endpoint);
-  	return request(apiurl).then(parseResponse);
+  	return request(apiurl).then(parseResponse).catch(handleError);
   } catch (err) {
     return q.reject(err);
   }
@@ -35,4 +35,8 @@ module.exports = API;
 function parseResponse(response) {
   try       { return JSON.parse(response);  }
   catch (e) { return response;              }
+}
+
+function handleError(e) {
+  throw e.error || e || 'Unexpected error';
 }

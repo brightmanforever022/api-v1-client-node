@@ -1,6 +1,7 @@
 'use strict';
 
 var API	        = require('../api')
+  , q           = require('q')
   , UrlPattern  = require('url-pattern');
 
 var	endpoints	= {
@@ -21,8 +22,7 @@ function get(options) {
 		.request('stats', { apiCode: options.apiCode })
 		.then(function (data) {
 			data = options.stat ? data[options.stat] : data;
-			if (!data) throw 'stat nonexistent';
-			return data;
+			return data || q.reject('Received unknown stat option');
 		});
 }
 
@@ -30,5 +30,7 @@ function getChartData(chartType, options) {
 	options = options || {};
 	return api
 		.request('charts', { type: chartType, apiCode: options.apiCode })
-		.then(function (data) { return data.values; });
+		.then(function (data) {
+      return data.values || q.reject('Invalid chart type');
+    });
 }

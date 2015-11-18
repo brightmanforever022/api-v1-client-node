@@ -8,7 +8,7 @@ var blockexplorer = require('blockchain.info/blockexplorer');
 
 ## Methods
 
-All method options can include an `api_code` property to prevent hitting request limits.
+All method options can include an `apiCode` property to prevent hitting request limits.
 
 ### getBlock
 

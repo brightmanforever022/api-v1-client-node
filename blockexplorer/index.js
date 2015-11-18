@@ -19,35 +19,35 @@ module.exports = {
 
 function getBlock(blockHash, options) {
   options = options || {};
-	return api.request('rawblock', { hash: blockHash, api_code: options.api_code });
+	return api.request('rawblock', { hash: blockHash, apiCode: options.apiCode });
 }
 
 function getTx(txHash, options) {
   options = options || {};
-	return api.request('rawtx', { hash: txHash, api_code: options.api_code });
+	return api.request('rawtx', { hash: txHash, apiCode: options.apiCode });
 }
 
 function getBlockHeight(blockHeight, options) {
   options = options || {};
-	return api.request('blockHeight', { height: blockHeight, api_code: options.api_code });
+	return api.request('blockHeight', { height: blockHeight, apiCode: options.apiCode });
 }
 
 function getAddress(address, options) {
 	options = options || {};
-	var params = { address: address, limit: options.limit, offset: options.offset, api_code: options.api_code };
+	var params = { address: address, limit: options.limit, offset: options.offset, apiCode: options.apiCode };
 	return api.request('address', params);
 }
 
 function getMultiAddress(addresses, options) {
   options = options || {};
 	addresses = (addresses instanceof Array ? addresses : [addresses]).join('|');
-	return api.request('multiaddr', { active: addresses, api_code: options.api_code });
+	return api.request('multiaddr', { active: addresses, apiCode: options.apiCode });
 }
 
 function getUnspentOutputs(addresses, options) {
   options = options || {};
 	addresses = (addresses instanceof Array ? addresses : [addresses]).join('|');
-	return api.request('unspent', { active: addresses, api_code: options.api_code });
+	return api.request('unspent', { active: addresses, apiCode: options.apiCode });
 }
 
 function getLatestBlock(options) {
@@ -62,10 +62,10 @@ function getUnconfirmedTx(options) {
 
 function getBlocks(time, options) {
   options = options || {};
-	return api.request('blocks', { time: time, api_code: options.api_code });
+	return api.request('blocks', { time: time, apiCode: options.apiCode });
 }
 
 function getInventoryData(hash, options) {
   options = options || {};
-	return api.request('inv', { hash: hash, api_code: options.api_code });
+	return api.request('inv', { hash: hash, apiCode: options.apiCode });
 }

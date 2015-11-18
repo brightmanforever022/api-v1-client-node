@@ -5,7 +5,8 @@ var API 			= require('../api')
 	, api 			= new API(endpoints);
 
 function MyWallet(guid, password, options) {
-	options = options || {};
+  options   = options || {};
+  this.guid = guid;
 	this.getParams = function () {
 		return {
 			guid						: guid,
@@ -95,6 +96,6 @@ MyWallet.create = function (password, apiCode, options) {
 		var walletOptions = { apiCode: apiCode };
 		return new MyWallet(response.guid, password, walletOptions);
 	});
-} ;
+};
 
 module.exports = MyWallet;

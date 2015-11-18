@@ -7,13 +7,14 @@ var endpoints = {
   pushtx	: new UrlPattern('/pushtx')
 };
 
-var api = API(endpoints);
+var api = new API(endpoints);
 
 module.exports = {
 	pushtx: pushtx
 };
 
 function pushtx(txHex, options) {
+	options = options || {};
 	var body = { tx: txHex, api_code: options.apiCode };
 	return api.post('pushtx', {}, body);
 }

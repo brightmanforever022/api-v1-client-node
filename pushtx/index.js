@@ -4,7 +4,7 @@ var API					= require('../api')
 	, UrlPattern	= require('url-pattern');
 
 var endpoints = {
-  pushtx	: new UrlPattern('/pushtx/:payload(?api_code=:apiCode)')
+  pushtx	: new UrlPattern('/pushtx')
 };
 
 var api = API(endpoints);
@@ -14,6 +14,6 @@ module.exports = {
 };
 
 function pushtx(txHex, options) {
-	var payload = encodeURIComponent(JSON.stringify({ tx: txHex }));
-	return api.request('pushtx', { payload: payload, apiCode: options.apiCode });
+	var body = { tx: txHex, api_code: options.apiCode };
+	return api.post('pushtx', {}, body);
 }

@@ -29,6 +29,20 @@ API.prototype.request = function (api, options) {
   }
 };
 
+API.prototype.post = function (api, options, body) {
+  try {
+    var endpoint  = this.endpoints[api].stringify(options)
+      , apiurl    = url.resolve(this.rootUrl, endpoint);
+    return request({
+      method: 'POST',
+      url   : apiurl,
+      form  : body
+    }).then(parseResponse).catch(handleError);
+  } catch (err) {
+    return q.reject(err);
+  }
+};
+
 module.exports = API;
 
 // Helper functions

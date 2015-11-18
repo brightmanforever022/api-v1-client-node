@@ -14,7 +14,7 @@ All method options can include an `apiCode` property to prevent hitting request 
 
 Usage:
 
-```
+```js
 pushtx.pushtx(transaction, options);
 ```
 

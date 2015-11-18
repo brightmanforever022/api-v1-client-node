@@ -1,44 +1,41 @@
 # Blockchain Statistics Module
 
-This module is for getting recent and past stats on Bitcoin.  
-To use, first import the module from `blockchain`:
+Importing:
 
-```
-var statistics = blockchain.statistics;
+```js
+var statistics = require('blockchain.info/statistics');
 ```
 
 ## Methods
+
+All method options can include an `apiCode` property to prevent hitting request limits.
 
 ### get
 
 Usage:
 
-```
-statistics.get([options,] callback);
+```js
+statistics.get(options);
 ```
 
-Responds with a json *object* containing an overview of many Bitcoin statistics (view an example response [here][stats]), unless the **stat** option is specified (it will then return a *number*).
+Responds with a json *object* containing an overview of many Bitcoin statistics (view an example response [here][stats]), unless the `stat` option is specified.
 
 Options (optional):
 
-* **apiCode**: call the api with your api code if you have one (*string*)
-* **stat**: get only one specific stat, rather than the entire json object response (*string*, ex: "n_btc_mined")
+  * `stat` - get only one specific stat, rather than the entire json object response, ex: `"n_btc_mined"` (*string*)
 
 ### getChartData
 
 Usage:
 
-```
-statistics.getChartData(chartType, [domain,] callback);
+```js
+statistics.getChartData(chartType, options);
 ```
 
-Responds with a json *object* that has a **values** property set to an *array* of chart coordinate objects in the form: {x:<*number*>,y:<*number*>}.
+Responds with a json *object* that has a `values` property set to an *array* of chart coordinate objects in the form: {x:<*number*>,y:<*number*>}.
 
 Parameters:
 
-* **chartType**: specifies which chart you want to get (*string*, ex: "total-bitcoin", required)
-* **domain**: specifies the range of times to pull chart coordinates from (*array* with two unix timestamp values, ex: [1421000000, 1423000000], optional)
-
-
+  * `chartType` - specifies which chart you want to get, ex: "total-bitcoin" (*string*, required)
 
 [stats]: https://blockchain.info/api/charts_api

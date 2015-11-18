@@ -1,6 +1,10 @@
-exports.blockexplorer = require('./lib/blockexplorer');
-exports.createWallet = require('./lib/createwallet');
-exports.exchangeRates = require('./lib/exchangerates');
-exports.MyWallet = require('./lib/MyWallet');
-exports.pushtx = require('./lib/pushtx');
-exports.statistics = require('./lib/statistics');
+'use strict';
+
+module.exports = {
+  blockexplorer : require('./blockexplorer'),
+  create        : require('./create'),
+  exchange      : require('./exchange'),
+  MyWallet      : require('./MyWallet'),
+  pushtx        : require('./pushtx'),
+  statistics    : require('./statistics')
+};

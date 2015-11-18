@@ -1,6 +1,6 @@
 'use strict';
 
-var api = require('./api');
+var api = require('../api');
 
 function MyWallet(guid, password, options) {
 	options = options || {};

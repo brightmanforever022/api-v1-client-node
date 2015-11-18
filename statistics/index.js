@@ -1,6 +1,6 @@
 'use strict';
 
-var api = require('./api');
+var api = require('../api');
 
 module.exports = {
 	get 					: get,
@@ -8,6 +8,7 @@ module.exports = {
 };
 
 function get(options) {
+	options = options || {};
 	return api
 		.request('stats', { apiCode: options.apiCode })
 		.then(function (data) {
@@ -18,6 +19,7 @@ function get(options) {
 }
 
 function getChartData(chartType, options) {
+	options = options || {};
 	return api
 		.request('charts', { type: chartType, apiCode: options.apiCode })
 		.then(function (data) { return data.values; });

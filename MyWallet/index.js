@@ -80,4 +80,19 @@ MyWallet.prototype.consolidate = function (options) {
 	return api.request('consolidate', params);
 };
 
+MyWallet.create = function (password, api_code, options) {
+	options = options || {};
+	var params = {
+		password: password,
+		apiCode: 	api_code,
+		priv: 		options.priv,
+		label:		options.label,
+		email:		options.email
+	};
+	return api.request('create', params).then(function (response) {
+		var walletOptions = { api_code: api_code };
+		return new MyWallet(response.guid, password, walletOptions);
+	});
+};
+
 module.exports = MyWallet;

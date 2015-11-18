@@ -1,5 +1,5 @@
 exports.blockexplorer = require('./lib/blockexplorer');
-exports.CreateWallet = require('./lib/CreateWallet');
+exports.createWallet = require('./lib/createwallet');
 exports.exchangeRates = require('./lib/exchangerates');
 exports.MyWallet = require('./lib/MyWallet');
 exports.pushtx = require('./lib/pushtx');

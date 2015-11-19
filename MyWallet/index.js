@@ -9,10 +9,9 @@ function MyWallet(guid, password, options) {
   this.guid = guid;
 	this.getParams = function () {
 		return {
-			guid						: guid,
 			password				: password,
-			secondPassword	: options.secondPassword,
-			apiCode				  : options.apiCode
+			second_password	: options.secondPassword,
+			api_code				: options.apiCode
 		};
 	};
 	return this;
@@ -26,27 +25,27 @@ MyWallet.prototype.send = function (address, amount, options) {
 	params.from			= options.from;
 	params.fee			= options.fee;
 	params.note 		= options.note;
-	return api.request('payment', params);
+	return api.post('payment', { guid: this.guid }, params);
 };
 
 MyWallet.prototype.sendMany = function (recipients, options) {
 	options = options || {};
 	var params = this.getParams();
-	params.recipients	= encodeURIComponent(JSON.stringify(recipients));
+	params.recipients	= JSON.stringify(recipients);
 	params.from				= options.from;
 	params.fee				= options.fee;
 	params.note 			= options.note;
-	return api.request('sendmany', params);
+	return api.post('sendmany', { guid: this.guid }, params);
 };
 
 MyWallet.prototype.getBalance = function () {
 	var params = this.getParams();
-	return api.request('balance', params);
+	return api.post('balance', { guid: this.guid }, params);
 };
 
 MyWallet.prototype.listAddresses = function () {
 	var params = this.getParams();
-	return api.request('list', params);
+	return api.post('list', { guid: this.guid }, params);
 };
 
 MyWallet.prototype.getAddress = function (address, options) {
@@ -54,45 +53,45 @@ MyWallet.prototype.getAddress = function (address, options) {
 	var params = this.getParams();
 	params.address 				= address;
 	params.confirmations	= options.confirmations || 6;
-	return api.request('addrBalance', params);
+	return api.post('addrBalance', { guid: this.guid }, params);
 };
 
 MyWallet.prototype.newAddress = function (options) {
 	options = options || {};
 	var params = this.getParams();
 	params.label = options.label;
-	return api.request('newAddress', params);
+	return api.post('newAddress', { guid: this.guid }, params);
 };
 
 MyWallet.prototype.archiveAddress = function (address) {
 	var params = this.getParams();
 	params.address = address;
-	return api.request('archive', params);
+	return api.post('archive', { guid: this.guid }, params);
 };
 
 MyWallet.prototype.unarchiveAddress = function (address) {
 	var params = this.getParams();
 	params.address = address;
-	return api.request('unarchive', params);
+	return api.post('unarchive', { guid: this.guid }, params);
 };
 
 MyWallet.prototype.consolidate = function (options) {
 	options = options || {};
 	var params = this.getParams();
 	params.days = options.days || 60;
-	return api.request('consolidate', params);
+	return api.post('consolidate', { guid: this.guid }, params);
 };
 
 MyWallet.create = function (password, apiCode, options) {
 	options = options || {};
 	var params = {
 		password: password,
-		apiCode: 	apiCode,
+		api_code:	apiCode,
 		priv: 		options.priv,
 		label:		options.label,
 		email:		options.email
 	};
-	return api.request('create', params).then(function (response) {
+	return api.post('create', {}, params).then(function (response) {
 		var walletOptions = { apiCode: apiCode };
 		return new MyWallet(response.guid, password, walletOptions);
 	});

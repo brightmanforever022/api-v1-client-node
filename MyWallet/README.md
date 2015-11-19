@@ -48,7 +48,7 @@ Create a new Blockchain Wallet. Responds with an instance of MyWallet, which wil
 
 Parameters:
 
-  * `password` - password to set for the wallet (required)
+  * `password` - password to set for the wallet (required, must be greater than 10 characters)
   * `apiCode` - Blockchain.info api code (required)
 
 Options (optional):

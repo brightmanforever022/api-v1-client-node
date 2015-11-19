@@ -1,3 +1,4 @@
+'use strict';
 
 var request 		= require('request-promise')
   , q           = require('q')

@@ -28,6 +28,7 @@ This module consists of these sub-modules:
   * [`blockexplorer`](./blockexplorer) - View data for addresses, blocks, transactions, and more
   * [`exchange`](./exchange) - Get real-time bitcoin exchange rates
   * [`pushtx`](./pushtx) - Push custom transactions
+  * [`Receive`](./Receive) - Receive notifications for payments
   * [`statistics`](./statistics) - Fetch historical blockchain data and statistics
 
 You can access sub-modules from the properties of the imported main module, or by importing them individually.

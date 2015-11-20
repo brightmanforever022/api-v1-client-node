@@ -1,8 +1,9 @@
 'use strict';
 
-var request 		= require('request-promise')
-  , q           = require('q')
-	, url 				= require('url');
+var request = require('request-promise')
+  , q       = require('q')
+	, url 	  = require('url')
+  , urljoin = require('url-join');
 
 var rootV1 = url.format({
 	protocol:	'https',
@@ -12,7 +13,7 @@ var rootV1 = url.format({
 var rootV2 = url.format({
 	protocol:	'https',
 	host: 		'api.blockchain.info',
-  path:     'v2'
+  pathname: 'v2'
 });
 
 function API(endpoints, v2) {
@@ -23,7 +24,7 @@ function API(endpoints, v2) {
 API.prototype.request = function (api, options) {
   try {
   	var endpoint	= this.endpoints[api].stringify(options)
-  		, apiurl		= url.resolve(this.rootUrl, endpoint);
+  		, apiurl		= urljoin(this.rootUrl, endpoint);
   	return request(apiurl).then(parseResponse).catch(handleError);
   } catch (err) {
     return q.reject(err);

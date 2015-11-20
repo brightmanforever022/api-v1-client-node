@@ -20,9 +20,9 @@ var blockchain = require('blockchain.info');
 
 All functions in this module return a JavaScript [promise](https://promisesaplus.com/) for handling asynchronous actions.
 
-## Documentation
+## Submodules
 
-This module consists of these sub-modules:
+This module consists of these submodules:
 
   * [`MyWallet`](./MyWallet) - Interact with or create a Blockchain Wallet
   * [`blockexplorer`](./blockexplorer) - View data for addresses, blocks, transactions, and more

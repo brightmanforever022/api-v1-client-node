@@ -26,7 +26,8 @@
     "request-promise": "^0.4.3",
     "url-join": "0.0.1",
     "url-parse": "^1.0.5",
-    "url-pattern": "^0.10.2"
+    "url-pattern": "^0.10.2",
+    "ws": "^0.8.0"
   },
   "engine": "node 0.10.36"
 }

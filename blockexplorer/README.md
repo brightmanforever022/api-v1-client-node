@@ -1,6 +1,8 @@
 # Blockchain Block Explorer Module
 
-Importing:
+Get the latest data regarding the block chain. [View full API documentation](https://blockchain.info/api/blockchain_api).
+
+## Importing
 
 ```js
 var blockexplorer = require('blockchain.info/blockexplorer');

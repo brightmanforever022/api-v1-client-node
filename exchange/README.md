@@ -1,8 +1,8 @@
 # Blockchain ExchangeRates Module
 
-## Accessing the module
+Get this current bitcoin exchange rates. [View full API documentation](https://blockchain.info/api/exchange_rates_api).
 
-Importing:
+## Importing
 
 ```js
 var exchange = require('blockchain.info/exchange');

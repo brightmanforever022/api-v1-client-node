@@ -1,6 +1,8 @@
 # Blockchain Push Transaction Module
 
-Importing:
+Broadcast raw transactions to the bitcoin network.
+
+## Importing
 
 ```js
 var pushtx = require('blockchain.info/pushtx');

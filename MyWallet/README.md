@@ -1,5 +1,7 @@
 # Blockchain MyWallet Module
 
+Programmatically interact with your Blockchain.info wallet. [View full API documentation](https://blockchain.info/api/blockchain_wallet_api).
+
 ## Opening a wallet
 
 Importing:

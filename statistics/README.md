@@ -1,6 +1,8 @@
 # Blockchain Statistics Module
 
-Importing:
+Get statistics and historical chart data for the bitcoin network. [View full API documentation](https://blockchain.info/api/charts_api).
+
+## Importing
 
 ```js
 var statistics = require('blockchain.info/statistics');

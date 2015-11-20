@@ -1,7 +1,7 @@
 
 # Blockchain.info Socket Module
 
-Blockchain data delivered in real-time.
+Blockchain data delivered in real-time. [View full API documentation](https://blockchain.info/api/api_websocket).
 
 ## Importing
 

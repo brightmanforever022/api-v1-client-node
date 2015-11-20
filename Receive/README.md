@@ -1,7 +1,7 @@
 
 # Blockchain.info Receive Module
 
-Receive custom payment notifications.
+Receive custom payment notifications. [View full API documentation](https://blockchain.info/api/api_receive).
 
 ## Importing
 

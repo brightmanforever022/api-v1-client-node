@@ -7,7 +7,7 @@ var endpoints = {
   pushtx	: new UrlPattern('/pushtx')
 };
 
-var api = new API(endpoints);
+var api = new API('https://blockchain.info', endpoints);
 
 module.exports = {
 	pushtx: pushtx

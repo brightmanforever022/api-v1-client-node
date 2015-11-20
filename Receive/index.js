@@ -9,7 +9,7 @@ var endpoints = {
   receive: new UrlPattern('/receive?xpub=:xpub&callback=:callback&key=:key')
 };
 
-var api = new API(endpoints, true);
+var api = new API('https://api.blockchain.info/v2', endpoints);
 
 function Receive(xpub, callback, key) {
   this.xpub     = xpub;

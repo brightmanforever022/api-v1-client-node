@@ -2,7 +2,7 @@
 
 var API 			= require('../api')
  	, endpoints	= require('./endpoints')
-	, api 			= new API(endpoints);
+	, api 			= new API('https://blockchain.info', endpoints);
 
 function MyWallet(guid, password, options) {
   options   = options || {};

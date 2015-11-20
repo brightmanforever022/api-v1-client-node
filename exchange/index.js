@@ -8,7 +8,7 @@ var endpoints	= {
   tobtc   : new UrlPattern('/tobtc?value=:value&currency=:currency(&api_code=:apiCode)')
 };
 
-var api = new API(endpoints);
+var api = new API('https://blockchain.info', endpoints);
 
 module.exports = {
 	getTicker	: getTicker,

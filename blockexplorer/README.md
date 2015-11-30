@@ -1,20 +1,23 @@
 # Blockchain Block Explorer Module
 
-Used to get data from the blockchain.
-To use, first import the module from `blockchain`:
+Get the latest data regarding the block chain. [View full API documentation](https://blockchain.info/api/blockchain_api).
 
-```
-var blockexplorer = blockchain.blockexplorer;
+## Importing
+
+```js
+var blockexplorer = require('blockchain.info/blockexplorer');
 ```
 
 ## Methods
+
+All method options can include an `apiCode` property to prevent hitting request limits.
 
 ### getBlock
 
 Usage:
 
-```
-blockexplorer.getBlock(blockId, [apiCode,] callback);
+```js
+blockexplorer.getBlock(blockId, options);
 ```
 
 Get a single block based on a block index or hash. Returns a `Block` object.
@@ -23,8 +26,8 @@ Get a single block based on a block index or hash. Returns a `Block` object.
 
 Usage:
 
-```
-blockexplorer.getTx(txId, [apiCode,] callback);
+```js
+blockexplorer.getTx(txId, options);
 ```
 
 Get a single transaction based on a transaction index or hash. Returns a `Transaction` object.
@@ -33,8 +36,8 @@ Get a single transaction based on a transaction index or hash. Returns a `Transa
 
 Usage:
 
-```
-blockexplorer.getBlockHeight(height, [apiCode,] callback);
+```js
+blockexplorer.getBlockHeight(height, options);
 ```
 
 Get an array of blocks at the specified height. Returns an array of `Block` objects.
@@ -43,39 +46,33 @@ Get an array of blocks at the specified height. Returns an array of `Block` obje
 
 Usage:
 
-```
-blockexplorer.getAddress([options,] address, callback);
+```js
+blockexplorer.getAddress(address, options);
 ```
 
 Get a single address and its transactions. Returns an `Address` object.
 
 Options (optional):
 
-* **limit**: the number of transactions to limit the response to (*number*)
-* **offset**: skip the first n transactions (*number*)
-* **apiCode**: api code (*string*)
+* `limit` - the number of transactions to limit the response to (*number*)
+* `offset` - skip the first n transactions (*number*)
 
 ### getMultiAddress
 
 Usage:
 
-```
-blockexplorer.getMultiAddress(addresses, [apiCode,] callback);
+```js
+blockexplorer.getMultiAddress(addresses, options);
 ```
 
 Get information on multiple addresses.
-
-Parameters:
-
-* **addresses**: *array* of addresses or an xPub (extended public key) *string*
-* **apiCode**: API code (*string*, optional)
 
 ### getUnspentOutputs
 
 Usage:
 
-```
-blockexplorer.getUnspentOutputs(address, [apiCode,] callback);
+```js
+blockexplorer.getUnspentOutputs(address, options);
 ```
 
 Get an array of unspent outputs for an address. Returns an *array* of `UnspentOutput` objects.
@@ -84,8 +81,8 @@ Get an array of unspent outputs for an address. Returns an *array* of `UnspentOu
 
 Usage:
 
-```
-blockexplorer.getLatestBlock([apiCode,] callback);
+```js
+blockexplorer.getLatestBlock(options);
 ```
 
 Get the latest block on the main chain. Returns a `LatestBlock` object.
@@ -94,8 +91,8 @@ Get the latest block on the main chain. Returns a `LatestBlock` object.
 
 Usage:
 
-```
-blockexplorer.getUncomfirmedTx([apiCode,] callback);
+```js
+blockexplorer.getUncomfirmedTx(options);
 ```
 
 Get a list of currently unconfirmed transactions. Returns an array of `Transaction` objects.
@@ -104,24 +101,22 @@ Get a list of currently unconfirmed transactions. Returns an array of `Transacti
 
 Usage:
 
-```
-blockexplorer.getBlocks(options, callback);
+```js
+blockexplorer.getBlocks(options);
 ```
 
-Get a list of blocks for a specific day or mining pool. Returns an array of `SimpleBlock` objects.
+Get a list of blocks for a specific day. Returns an array of `SimpleBlock` objects.
 
 Options:
 
-* **pool**: name of the pool to get blocks from (*string*, required)
-* **time**: specific day to get blocks from (*number* in milliseconds, optional)
-* **apiCode**: api code (*string*, optional)
+* `time` - specific day to get blocks from (*number* in milliseconds, optional)
 
 ### getInventoryData
 
 Usage:
 
 ```
-blockexplorer.getInventoryData(hash, [apiCode,] callback);
+blockexplorer.getInventoryData(hash, options);
 ```
 
 Get inventory data for recent blocks and addresses (up to 1 hour old). Returns an `InventoryData` object.

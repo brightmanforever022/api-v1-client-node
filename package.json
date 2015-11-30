@@ -1,6 +1,6 @@
 {
   "name": "blockchain.info",
-  "version": "1.3.1",
+  "version": "2.0.0",
   "description": "A Node implementation for accessing the Blockchain.info API.",
   "author": {
     "name": "Blockchain.info",
@@ -22,7 +22,12 @@
     "bitcoin"
   ],
   "dependencies": {
-    "request": "^2.53.0"
+    "q": "^1.4.1",
+    "request-promise": "^0.4.3",
+    "url-join": "0.0.1",
+    "url-parse": "^1.0.5",
+    "url-pattern": "^0.10.2",
+    "ws": "^0.8.0"
   },
   "engine": "node 0.10.36"
 }

@@ -37,9 +37,12 @@ Socket.prototype.onTransaction = function (callback, options) {
   } else {
     this.subscribe('unconfirmed_sub');
   }
+  if (options.setTxMini) {
+    this.subscribe('set_tx_mini');
+  }
   this.socket.on('message', function (msg) {
     msg = parseJSON(msg);
-    if (msg.op === 'utx') callback(msg.x);
+    if (msg.op === 'utx' || msg.op === 'minitx') callback(msg.x);
   });
   return this;
 };

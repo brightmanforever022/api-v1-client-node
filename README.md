@@ -29,6 +29,7 @@ This module consists of these submodules:
   * [`exchange`](./exchange) - Get real-time bitcoin exchange rates
   * [`pushtx`](./pushtx) - Push custom transactions
   * [`Receive`](./Receive) - Receive notifications for payments
+  * [`Socket`](./Socket) - Live notifications for transactions and blocks
   * [`statistics`](./statistics) - Fetch historical blockchain data and statistics
 
 You can access sub-modules from the properties of the imported main module, or by importing them individually.

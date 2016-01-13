@@ -21,6 +21,9 @@
     "blockchain",
     "bitcoin"
   ],
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha ./**/spec.js"
+  },
   "dependencies": {
     "q": "^1.4.1",
     "request-promise": "^0.4.3",
@@ -29,5 +32,10 @@
     "url-pattern": "^0.10.2",
     "ws": "^0.8.0"
   },
-  "engine": "node 0.10.36"
+  "engine": "node >= 0.10.36",
+  "devDependencies": {
+    "chai": "3.4.*",
+    "mocha": "2.3.*",
+    "nock": "5.2.*"
+  }
 }

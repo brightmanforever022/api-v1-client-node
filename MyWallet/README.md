@@ -1,3 +1,4 @@
+
 # Blockchain MyWallet Module
 
 Programmatically interact with your Blockchain.info wallet. [View full API documentation](https://blockchain.info/api/blockchain_wallet_api).
@@ -20,6 +21,19 @@ Options (optional):
 
   * `secondPassword` - second wallet password (required only if wallet is double-encrypted)
   * `apiCode` - Blockchain.info api code (will be automatically included in all further requests to the wallet)
+  * `apiHost` - set the host for the api calls (defaults to `https://blockchain.info/`)
+
+## Wallet API v2 Compatibility
+
+This module is compatible with the [Wallet API v2 service](https://github.com/blockchain/service-my-wallet-v3). To use the wallet service for api calls, set the `apiHost` option to point to where the service is running. Then, prior to accessing a wallet, call `wallet.login()` to enable api calls to that wallet.
+
+Example:
+
+```js
+var options = { apiCode: 'myAPICode', apiHost: 'http://localhost:3000' };
+var wallet = new MyWallet('myIdentifier', 'myPassword123', options);
+wallet.login().then(function () { console.log('success!'); });
+```
 
 ## Response objects
 
@@ -46,7 +60,7 @@ Usage:
 MyWallet.create(password, apiCode, options);
 ```
 
-Create a new Blockchain Wallet. Responds with an instance of MyWallet, which will adopt the same api code used to create the wallet.
+Create a new Blockchain Wallet. Responds with an instance of MyWallet, which will adopt the same api code used to create the wallet. If you are using the Wallet API v2 service, remember to set the `apiHost` option to wherever the service is running.
 
 Parameters:
 
@@ -58,6 +72,7 @@ Options (optional):
   * `priv` - private key to use for the wallet's first bitcoin address
   * `label` - label to give to the wallet's first bitcoin address
   * `email` - email to associate with the new Blockchain Wallet
+  * `apiHost` - set the host for the api calls to the newly created wallet (defaults to `https://blockchain.info/`)
 
 ## Instance Methods
 

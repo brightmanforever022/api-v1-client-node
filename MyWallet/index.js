@@ -17,6 +17,11 @@ function MyWallet(guid, password, options) {
 	return this;
 }
 
+MyWallet.prototype.login = function () {
+	var params = this.getParams();
+	return this.api.post('login', { guid: this.guid }, params);
+};
+
 MyWallet.prototype.send = function (address, amount, options) {
 	options = options || {};
 	var params = this.getParams();

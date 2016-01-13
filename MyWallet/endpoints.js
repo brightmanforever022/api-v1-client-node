@@ -4,6 +4,7 @@ var UrlPattern = require('url-pattern');
 
 module.exports = {
   create      : new UrlPattern('/api/v2/create_wallet'),
+  login       : new UrlPattern('/merchant/:guid/login'),
   payment     : new UrlPattern('/merchant/:guid/payment'),
   sendmany    : new UrlPattern('/merchant/:guid/sendmany'),
   balance     : new UrlPattern('/merchant/:guid/balance'),

@@ -24,13 +24,14 @@ Options (optional):
 
 ## Wallet API v2 Compatibility
 
-This module is compatible with the [Wallet API v2 service](https://github.com/blockchain/service-my-wallet-v3). To use the wallet service for api calls, set the `apiHost` option to point to where the service is running.
+This module is compatible with the [Wallet API v2 service](https://github.com/blockchain/service-my-wallet-v3). To use the wallet service for api calls, set the `apiHost` option to point to where the service is running. Then, prior to accessing a wallet, call `wallet.login()` to enable api calls to that wallet.
 
 Example:
 
 ```js
 var options = { apiCode: 'myAPICode', apiHost: 'http://localhost:3000' };
 var wallet = new MyWallet('myIdentifier', 'myPassword123', options);
+wallet.login().then(function () { console.log('success!'); });
 ```
 
 ## Response objects

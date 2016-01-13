@@ -11,9 +11,9 @@ function API(rootUrl, endpoints) {
 
 API.prototype.request = function (api, options) {
   try {
-  	var endpoint	= this.endpoints[api].stringify(options)
-  		, apiurl		= urljoin(this.rootUrl, endpoint);
-  	return request(apiurl).then(parseResponse).catch(handleError);
+    var endpoint  = this.endpoints[api].stringify(options)
+      , apiurl    = urljoin(this.rootUrl, endpoint);
+    return request(apiurl).then(parseResponse).catch(handleError);
   } catch (err) {
     return q.reject(err);
   }

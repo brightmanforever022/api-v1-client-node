@@ -6,7 +6,7 @@ var statistics  = require('./index')
 
 describe('statistics', function () {
 
-  describe('get()', function () {
+  describe('.get()', function () {
 
     nock('https://blockchain.info')
       .get('/stats').query(true).times(3)
@@ -41,7 +41,7 @@ describe('statistics', function () {
 
   });
 
-  describe('getChartData()', function () {
+  describe('.getChartData()', function () {
     var chartData = [ { x: 100, y: 4 }
                     , { x: 101, y: 8 } ];
 

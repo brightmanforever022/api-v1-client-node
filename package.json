@@ -22,7 +22,7 @@
     "bitcoin"
   ],
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha ./**/*.spec.js"
+    "test": "node_modules/mocha/bin/mocha ./**/spec.js"
   },
   "dependencies": {
     "q": "^1.4.1",

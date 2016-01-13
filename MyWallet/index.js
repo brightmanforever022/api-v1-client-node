@@ -1,7 +1,8 @@
 'use strict';
 
 var API 			= require('../api')
- 	, endpoints	= require('./endpoints');
+ 	, endpoints	= require('./endpoints')
+  , bcAPI     = new API('https://blockchain.info', endpoints);
 
 function MyWallet(guid, password, options) {
   options   = options || {};
@@ -96,7 +97,7 @@ MyWallet.create = function (password, apiCode, options) {
     label     : options.label,
     email     : options.email
 	};
-	return this.api.post('create', {}, params).then(function (response) {
+	return bcAPI.post('create', {}, params).then(function (response) {
 		var walletOptions = { apiCode: apiCode, apiHost: options.apiHost };
 		return new MyWallet(response.guid, password, walletOptions);
 	});

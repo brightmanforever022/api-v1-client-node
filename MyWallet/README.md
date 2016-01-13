@@ -1,3 +1,4 @@
+
 # Blockchain MyWallet Module
 
 Programmatically interact with your Blockchain.info wallet. [View full API documentation](https://blockchain.info/api/blockchain_wallet_api).
@@ -59,7 +60,7 @@ Usage:
 MyWallet.create(password, apiCode, options);
 ```
 
-Create a new Blockchain Wallet. Responds with an instance of MyWallet, which will adopt the same api code used to create the wallet.
+Create a new Blockchain Wallet. Responds with an instance of MyWallet, which will adopt the same api code used to create the wallet. If you are using the Wallet API v2 service, remember to set the `apiHost` option to wherever the service is running.
 
 Parameters:
 
@@ -71,6 +72,7 @@ Options (optional):
   * `priv` - private key to use for the wallet's first bitcoin address
   * `label` - label to give to the wallet's first bitcoin address
   * `email` - email to associate with the new Blockchain Wallet
+  * `apiHost` - set the host for the api calls to the newly created wallet (defaults to `https://blockchain.info/`)
 
 ## Instance Methods
 

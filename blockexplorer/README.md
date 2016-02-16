@@ -67,6 +67,11 @@ blockexplorer.getMultiAddress(addresses, options);
 
 Get information on multiple addresses.
 
+Options (optional):
+
+* `limit` - the number of transactions to limit the response to (*number*)
+* `offset` - skip the first n transactions (*number*)
+
 ### getUnspentOutputs
 
 Usage:

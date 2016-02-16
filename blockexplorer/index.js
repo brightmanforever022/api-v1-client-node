@@ -41,7 +41,8 @@ function getAddress(address, options) {
 function getMultiAddress(addresses, options) {
   options = options || {};
   addresses = (addresses instanceof Array ? addresses : [addresses]).join('|');
-  return api.request('multiaddr', { active: addresses, apiCode: options.apiCode });
+  var params = { active: addresses, limit: options.limit, offset: options.offset, apiCode: options.apiCode };
+  return api.request('multiaddr', params);
 }
 
 function getUnspentOutputs(addresses, options) {

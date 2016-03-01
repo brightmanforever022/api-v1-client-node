@@ -1,6 +1,12 @@
 'use strict';
 
-var WebSocket = require('ws');
+try {
+  var WebSocket = require('ws');
+} catch (e) {
+  return module.exports = function () {
+    console.log('Cannot create Socket object, module `ws` was not installed correctly');
+  };
+}
 
 function Socket() {
   var wsUrl   = 'wss://ws.blockchain.info/inv';

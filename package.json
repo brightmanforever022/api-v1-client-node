@@ -1,6 +1,7 @@
 {
   "name": "blockchain.info",
   "version": "2.2.1",
+  "engine": "node >= 0.10.36",
   "description": "A Node implementation for accessing the Blockchain.info API.",
   "author": {
     "name": "Blockchain.info",
@@ -29,10 +30,11 @@
     "request-promise": "^0.4.3",
     "url-join": "0.0.1",
     "url-parse": "^1.0.5",
-    "url-pattern": "^0.10.2",
+    "url-pattern": "^0.10.2"
+  },
+  "optionalDependencies": {
     "ws": "^0.8.0"
   },
-  "engine": "node >= 0.10.36",
   "devDependencies": {
     "chai": "3.4.*",
     "mocha": "2.3.*",

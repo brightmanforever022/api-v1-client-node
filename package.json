@@ -1,6 +1,6 @@
 {
   "name": "blockchain.info",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "engine": "node >= 0.10.36",
   "description": "A Node implementation for accessing the Blockchain.info API.",
   "author": {

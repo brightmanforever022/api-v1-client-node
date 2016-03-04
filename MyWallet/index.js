@@ -1,8 +1,7 @@
 'use strict';
 
 var API       = require('../api')
-  , endpoints = require('./endpoints')
-  , bcAPI     = new API('https://blockchain.info', endpoints);
+  , endpoints = require('./endpoints');
 
 function MyWallet(guid, password, options) {
   options   = options || {};
@@ -90,6 +89,7 @@ MyWallet.prototype.consolidate = function (options) {
 
 MyWallet.create = function (password, apiCode, options) {
   options = options || {};
+  var api = new API(options.apiHost || 'https://blockchain.info', endpoints);
   var params = {
     password  : password,
     api_code  : apiCode,
@@ -97,7 +97,7 @@ MyWallet.create = function (password, apiCode, options) {
     label     : options.label,
     email     : options.email
   };
-  return bcAPI.post('create', {}, params).then(function (response) {
+  return api.post('create', {}, params).then(function (response) {
     var walletOptions = { apiCode: apiCode, apiHost: options.apiHost };
     return new MyWallet(response.guid, password, walletOptions);
   });

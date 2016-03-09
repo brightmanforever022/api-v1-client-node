@@ -17,22 +17,22 @@ An instance of a wallet needs to be initialized before it can be used:
 var wallet = new MyWallet(identifier, password, options);
 ```
 
-Options (optional):
+Options:
 
   * `secondPassword` - second wallet password (required only if wallet is double-encrypted)
   * `apiCode` - Blockchain.info api code (will be automatically included in all further requests to the wallet)
-  * `apiHost` - set the host for the api calls (defaults to `https://blockchain.info/`)
+  * `apiHost` - set the host for the api calls (required)
 
 ## Wallet API v2 Compatibility
 
-This module is compatible with the [Wallet API v2 service](https://github.com/blockchain/service-my-wallet-v3). To use the wallet service for api calls, set the `apiHost` option to point to where the service is running. Then, prior to accessing a wallet, call `wallet.login()` to enable api calls to that wallet.
+This module requires the [Wallet API v2 service](https://github.com/blockchain/service-my-wallet-v3). To use the wallet service for api calls, set the `apiHost` option to point to where the service is running.
 
 Example:
 
 ```js
 var options = { apiCode: 'myAPICode', apiHost: 'http://localhost:3000' };
 var wallet = new MyWallet('myIdentifier', 'myPassword123', options);
-wallet.login().then(function () { console.log('success!'); });
+wallet.getBalance().then(function (balance) { console.log('My balance is %d!', balance); });
 ```
 
 ## Response objects
@@ -67,12 +67,12 @@ Parameters:
   * `password` - password to set for the wallet (required, must be greater than 10 characters)
   * `apiCode` - Blockchain.info api code (required)
 
-Options (optional):
+Options:
 
   * `priv` - private key to use for the wallet's first bitcoin address
   * `label` - label to give to the wallet's first bitcoin address
   * `email` - email to associate with the new Blockchain Wallet
-  * `apiHost` - set the host for the api calls to the newly created wallet (defaults to `https://blockchain.info/`)
+  * `apiHost` - set the host for the api calls to the newly created wallet (required)
 
 ## Instance Methods
 

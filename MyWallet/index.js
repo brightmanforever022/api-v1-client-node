@@ -4,9 +4,10 @@ var API       = require('../api')
   , endpoints = require('./endpoints');
 
 function MyWallet(guid, password, options) {
-  options   = options || {};
+  options = options || {};
+  if (!options.apiHost) throw 'Missing required option: apiHost';
   this.guid = guid;
-  this.api  = new API(options.apiHost || 'https://blockchain.info', endpoints);
+  this.api  = new API(options.apiHost, endpoints);
   this.getParams = function () {
     return {
       password        : password,
@@ -89,7 +90,8 @@ MyWallet.prototype.consolidate = function (options) {
 
 MyWallet.create = function (password, apiCode, options) {
   options = options || {};
-  var api = new API(options.apiHost || 'https://blockchain.info', endpoints);
+  if (!options.apiHost) throw 'Missing required option: apiHost';
+  var api = new API(options.apiHost, endpoints);
   var params = {
     password  : password,
     api_code  : apiCode,

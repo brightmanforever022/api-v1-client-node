@@ -17,6 +17,7 @@ function Socket() {
   EventEmitter.call(this);
   var wsUrl = 'wss://ws.blockchain.info/inv';
   var socket = new WebSocket(wsUrl);
+  this.close = socket.close.bind(socket);
 
   this.op = function (op, data) {
     var message = JSON.stringify(extend({ op: op }, data || {}));

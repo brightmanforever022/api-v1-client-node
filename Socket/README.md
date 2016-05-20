@@ -19,6 +19,12 @@ var mySocket = new Socket();
 
 ## Methods
 
+### close
+
+```js
+mySocket.close();
+```
+
 ### onOpen
 
 ```js

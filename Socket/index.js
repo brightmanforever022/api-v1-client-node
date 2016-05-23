@@ -18,10 +18,13 @@ function Socket() {
   var wsUrl = 'wss://ws.blockchain.info/inv';
   var socket = new WebSocket(wsUrl);
   this.close = socket.close.bind(socket);
+  this.getReadyState = function () { return socket.readyState; };
 
   this.op = function (op, data) {
     var message = JSON.stringify(extend({ op: op }, data || {}));
-    socket.on('open', socket.send.bind(socket, message));
+    var send = socket.send.bind(socket, message);
+    if (socket.readyState === WebSocket.CONNECTING) socket.on('open', send);
+    else if (socket.readyState === WebSocket.OPEN) send();
   };
 
   socket.on('message', function (message) {

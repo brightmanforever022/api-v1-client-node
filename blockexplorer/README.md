@@ -107,14 +107,10 @@ Get a list of currently unconfirmed transactions. Returns an array of `Transacti
 Usage:
 
 ```js
-blockexplorer.getBlocks(options);
+blockexplorer.getBlocks(time, options);
 ```
 
 Get a list of blocks for a specific day. Returns an array of `SimpleBlock` objects.
-
-Options:
-
-* `time` - specific day to get blocks from (*number* in milliseconds, optional)
 
 ### getInventoryData
 

@@ -6,7 +6,7 @@ Blockchain data delivered in real-time. [View full API documentation](https://bl
 ## Importing
 
 ```js
-var Socket = require('blockchain.info/socket');
+var Socket = require('blockchain.info/Socket');
 ```
 
 ## Instantiating

@@ -5,7 +5,7 @@ var API         = require('../api')
   , UrlPattern  = require('url-pattern');
 
 var  endpoints  = {
-  charts  : new UrlPattern('/charts/:type?format=json(&api_code=:apiCode)'),
+  charts  : new UrlPattern('/charts/:type?format=json(&api_code=:apiCode)(&timespan=:timespan)'),
   stats   : new UrlPattern('/stats?format=json(&api_code=:apiCode)')
 };
 
@@ -29,7 +29,7 @@ function get(options) {
 function getChartData(chartType, options) {
   options = options || {};
   return api
-    .request('charts', { type: chartType, apiCode: options.apiCode })
+    .request('charts', { type: chartType, apiCode: options.apiCode, timespan: options.timespan })
     .then(function (data) {
       return data.values || q.reject('Invalid chart type');
     });

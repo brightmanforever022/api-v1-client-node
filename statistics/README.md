@@ -40,4 +40,8 @@ Parameters:
 
   * `chartType` - specifies which chart you want to get, ex: "total-bitcoin" (*string*, required)
 
+Options:
+
+  * `timespan` - interval for which to fetch data, can be set to `'all'` or a period of time formatted as `'<time><unit>'`, ex: `'2years'` or `'90d'` (*string*)
+
 [stats]: https://blockchain.info/api/charts_api

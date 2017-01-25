@@ -26,6 +26,22 @@ Options (optional):
 
   * `currency` - specify which currency to get data for (currency code, *string*)
 
+### fromBTC
+
+Usage:
+
+```js
+exchange.fromBTC(amount, time, currency, options);
+```
+
+Gets the historical market price of the requested BTC amount at the requested time. Responds with the value in *string* format.
+
+Parameters:
+
+  * `amount` - the amount of BTC  (satoshi, *number*)
+  * `time` - the historical date (milliseconds since Unix epoch, *number*)
+  * `currency` - the code of the currency to convert from (currency code, *string*)
+
 ### toBTC
 
 Usage:

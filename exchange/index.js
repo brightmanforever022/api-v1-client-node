@@ -23,10 +23,10 @@ function getTicker(options) {
     .then(function (data) { return data[options.currency] || data; });
 }
 
-function fromBTC(amount, time, currency, options) {
+function fromBTC(amount, currency, options) {
 	options = options || {};
-	return api.request('frombtc', { value: amount, time: time, currency: currency, apiCode: options.apiCode })
-		.then(function (value) { return '' + value; });
+	return api.request('frombtc', { value: amount, time: options.time || 0, currency: currency, apiCode: options.apiCode })
+		.then(function (value) { return parseFloat(value) });
 }
 
 function toBTC(amount, currency, options) {

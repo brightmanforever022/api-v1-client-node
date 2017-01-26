@@ -10,7 +10,7 @@ var exchange = require('blockchain.info/exchange');
 
 ## Methods
 
-All method options can include an `apiCode` property to prevent hitting request limits.
+All methods accept an options *Object* parameter that can include an `apiCode` property to prevent hitting request limits.
 
 ### getTicker
 
@@ -31,23 +31,26 @@ Options (optional):
 Usage:
 
 ```js
-exchange.fromBTC(amount, time, currency, options);
+exchange.fromBTC(amount, currency, options);
 ```
 
 Gets the historical market price of the requested BTC amount at the requested time. Responds with the value in *string* format.
 
-Parameters:
+Required Parameters:
 
   * `amount` - the amount of BTC  (satoshi, *number*)
-  * `time` - the historical date (milliseconds since Unix epoch, *number*)
   * `currency` - the code of the currency to convert from (currency code, *string*)
 
+Options (optional):
+
+  * `time` - the historical date (milliseconds since Unix epoch, *number*)
+  
 ### toBTC
 
 Usage:
 
 ```js
-exchange.toBTC(amount, options);
+exchange.toBTC(amount, currency, options);
 ```
 
 Converts an amount of a given currency to BTC. Responds with a number in *string* format.

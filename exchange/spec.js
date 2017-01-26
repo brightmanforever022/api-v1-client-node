@@ -47,9 +47,9 @@ describe('exchange', function () {
 			.reply(200, '227.13');
 
 		it('should convert the currency', function (done) {
-			exchange.fromBTC(100000000, 1441308160481, 'USD')
+			exchange.fromBTC(100000000, 'USD')
 				.then(function (response) {
-					expect(response).to.equal('227.13');
+					expect(response).to.equal(227.13);
 					done();
 				})
 				.catch(done);

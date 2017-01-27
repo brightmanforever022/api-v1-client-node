@@ -8,13 +8,13 @@ describe('exchange', function () {
 
   describe('.getTicker()', function () {
     var ticker =  {
-    	USD: {
-    		'15m'   : 432.52,
-				last    : 432.52,
-				buy     : 432.52,
-				sell    : 433,
-				symbol  : '$'
-    	}
+      USD: {
+        '15m'  : 432.52,
+        last   : 432.52,
+        buy    : 432.52,
+        sell   : 433,
+        symbol : '$'
+      }
     };
 
     nock('https://blockchain.info')
@@ -40,26 +40,26 @@ describe('exchange', function () {
     });
   });
 
-	describe('.fromBTC()', function () {
-		nock('https://blockchain.info')
-			.get('/frombtc')
-			.query(true)
-			.reply(200, '227.13');
+  describe('.fromBTC()', function () {
+    nock('https://blockchain.info')
+      .get('/frombtc')
+      .query(true)
+      .reply(200, '227.13');
 
-		it('should convert the currency', function (done) {
-			exchange.fromBTC(100000000, 'USD')
-				.then(function (response) {
-					expect(response).to.equal(227.13);
-					done();
-				})
-				.catch(done);
-		});
-	});
+    it('should convert the currency', function (done) {
+      exchange.fromBTC(100000000, 'USD')
+        .then(function (response) {
+          expect(response).to.equal(227.13);
+          done();
+        })
+        .catch(done);
+    });
+  });
 
   describe('.toBTC()', function () {
     nock('https://blockchain.info')
       .get('/tobtc')
-			.query(true)
+      .query(true)
       .reply(200, '1,234.1234');
 
     it('should convert the currency', function (done) {

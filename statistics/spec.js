@@ -38,12 +38,13 @@ describe('statistics', function () {
           done();
         });
     });
-
   });
 
   describe('.getChartData()', function () {
-    var chartData = [ { x: 100, y: 4 }
-                    , { x: 101, y: 8 } ];
+    var chartData = [
+      { x: 100, y: 4 },
+      { x: 101, y: 8 }
+    ];
 
     nock('https://blockchain.info')
       .get('/charts/market-cap').query(true)
@@ -57,7 +58,41 @@ describe('statistics', function () {
         })
         .catch(done);
     });
-
   });
 
+  describe('.getPoolData()', function () {
+
+    var poolData = {
+      "BitFury": 58,
+      "AntPool": 87
+    };
+
+    it('should get pool data', function (done) {
+
+      nock('https://api.blockchain.info')
+        .get('/pools?')
+        .reply(200, poolData);
+
+      statistics.getPoolData()
+        .then(function (data) {
+          expect(data).to.deep.equal(poolData);
+          done();
+        })
+        .catch(done);
+    });
+
+    it('should get pool data with optional timespan', function (done) {
+
+      nock('https://api.blockchain.info')
+        .get('/pools?timespan=8days')
+        .reply(200, poolData);
+
+      statistics.getPoolData({ timespan: 8 })
+        .then(function (data) {
+          expect(data).to.deep.equal(poolData);
+          done();
+        })
+        .catch(done);
+    });
+  });
 });

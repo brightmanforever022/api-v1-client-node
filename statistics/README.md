@@ -20,7 +20,8 @@ Usage:
 statistics.get(options);
 ```
 
-Responds with a json *object* containing an overview of many Bitcoin statistics (view an example response [here][stats]), unless the `stat` option is specified.
+Responds with a json *object* containing an overview of many Bitcoin statistics unless the `stat` option is specified. 
+View an example response [here](https://api.blockchain.info/stats).
 
 Options (optional):
 
@@ -43,5 +44,21 @@ Parameters:
 Options:
 
   * `timespan` - interval for which to fetch data, can be set to `'all'` or a period of time formatted as `'<time><unit>'`, ex: `'2years'` or `'90d'` (*string*)
+
+### getPoolData
+
+Usage:
+
+```js
+statistics.getPoolData(options);
+```
+
+Responds with a json *object* containing mining pools and their total blocks mined in the last 4 days.
+View an example response [here](https://api.blockchain.info/pools?&timespan=4days).
+
+Options (optional):
+
+  * `timespan` - duration over which the data is computed (maximum 10 days), ex: `8` (*number*)
+
 
 [stats]: https://blockchain.info/api/charts_api

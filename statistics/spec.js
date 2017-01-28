@@ -69,8 +69,8 @@ describe('statistics', function () {
 
     it('should get pool data', function (done) {
 
-      nock('https://api.blockchain.info')
-        .get('/pools?')
+      nock('https://blockchain.info')
+        .get('/pools?format=json')
         .reply(200, poolData);
 
       statistics.getPoolData()
@@ -83,8 +83,8 @@ describe('statistics', function () {
 
     it('should get pool data with optional timespan', function (done) {
 
-      nock('https://api.blockchain.info')
-        .get('/pools?timespan=8days')
+      nock('https://blockchain.info')
+        .get('/pools?format=json&timespan=8days')
         .reply(200, poolData);
 
       statistics.getPoolData({ timespan: 8 })

@@ -6,6 +6,7 @@ var API         = require('../api')
 
 var endpoints  = {
   charts : new UrlPattern('/charts/:type?format=json(&api_code=:apiCode)(&timespan=:timespan)'),
+  pools  : new UrlPattern('/pools?format=json(&timespan=:timespan\\days)(&api_code=:apiCode)'),
   stats  : new UrlPattern('/stats?format=json(&api_code=:apiCode)')
 };
 
@@ -37,12 +38,10 @@ function getChartData(chartType, options) {
 }
 
 function getPoolData(options) {
-  var api = new API('https://api.blockchain.info', { pools : new UrlPattern('/pools?(timespan=:timespan)(:days)(&api_code=:apiCode)') });
-
   options = options || {};
   return api
     .request('pools', { apiCode: options.apiCode, timespan: options.timespan, days: options.timespan ? 'days' : '' })
     .then(function (data) {
-      return data || q.reject('Invalid timespan');
+      return data;
     });
 }

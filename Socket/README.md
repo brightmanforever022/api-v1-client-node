@@ -6,7 +6,7 @@ Blockchain data delivered in real-time. [View full API documentation](https://bl
 ## Importing
 
 ```js
-var Socket = require('blockchain.info/Socket');
+var Socket = require('blockchain.info/Socket')
 ```
 
 ## Instantiating
@@ -14,7 +14,7 @@ var Socket = require('blockchain.info/Socket');
 An instance of `Socket` must be instantiated before using it:
 
 ```js
-var mySocket = new Socket();
+var mySocket = new Socket()
 ```
 
 ## Methods
@@ -22,13 +22,13 @@ var mySocket = new Socket();
 ### close
 
 ```js
-mySocket.close();
+mySocket.close()
 ```
 
 ### onOpen
 
 ```js
-mySocket.onOpen(callback);
+mySocket.onOpen(callback)
 ```
 
 Parameters:
@@ -38,7 +38,7 @@ Parameters:
 ### onClose
 
 ```js
-mySocket.onClose(callback);
+mySocket.onClose(callback)
 ```
 
 Parameters:
@@ -48,7 +48,7 @@ Parameters:
 ### onTransaction
 
 ```js
-mySocket.onTransaction(callback, options);
+mySocket.onTransaction(callback, options)
 ```
 
 Parameters:
@@ -74,7 +74,7 @@ Minimal Tx:
 ### onBlock
 
 ```js
-mySocket.onBlock(callback);
+mySocket.onBlock(callback)
 ```
 
 Parameters:

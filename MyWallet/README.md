@@ -8,13 +8,13 @@ Programmatically interact with your Blockchain.info wallet. [View full API docum
 Importing:
 
 ```js
-var MyWallet = require('blockchain.info/MyWallet');
+var MyWallet = require('blockchain.info/MyWallet')
 ```
 
 An instance of a wallet needs to be initialized before it can be used:
 
 ```js
-var wallet = new MyWallet(identifier, password, options);
+var wallet = new MyWallet(identifier, password, options)
 ```
 
 Options:
@@ -30,9 +30,9 @@ This module requires the [Wallet API v2 service](https://github.com/blockchain/s
 Example:
 
 ```js
-var options = { apiCode: 'myAPICode', apiHost: 'http://localhost:3000' };
-var wallet = new MyWallet('myIdentifier', 'myPassword123', options);
-wallet.getBalance().then(function (balance) { console.log('My balance is %d!', balance); });
+var options = { apiCode: 'myAPICode', apiHost: 'http://localhost:3000' }
+var wallet = new MyWallet('myIdentifier', 'myPassword123', options)
+wallet.getBalance().then(function (balance) { console.log('My balance is %d!', balance); })
 ```
 
 ## Response objects
@@ -57,7 +57,7 @@ Address Object Properties:
 Usage:
 
 ```js
-MyWallet.create(password, apiCode, options);
+MyWallet.create(password, apiCode, options)
 ```
 
 Create a new Blockchain Wallet. Responds with an instance of MyWallet, which will adopt the same api code used to create the wallet. If you are using the Wallet API v2 service, remember to set the `apiHost` option to wherever the service is running.
@@ -83,7 +83,7 @@ The API code passed into the MyWallet constructor is automatically included in a
 Usage:
 
 ```js
-wallet.send(address, amount, options);
+wallet.send(address, amount, options)
 ```
 
 Sends bitcoin from the wallet to a given address. Responds with a Payment Response Object.
@@ -104,7 +104,7 @@ Options (optional):
 Usage:
 
 ```js
-wallet.sendMany(recipients, options);
+wallet.sendMany(recipients, options)
 ```
 
 Sends bitcoin to multiple addresses. Responds with a Payment Response Object.
@@ -124,7 +124,7 @@ Options (optional):
 Usage:
 
 ```js
-wallet.getBalance();
+wallet.getBalance()
 ```
 
 Responds with the entire balance of a wallet, as a number, **in satoshi**.
@@ -134,7 +134,7 @@ Responds with the entire balance of a wallet, as a number, **in satoshi**.
 Usage:
 
 ```js
-wallet.listAddresses();
+wallet.listAddresses()
 ```
 
 Responds with an *object* that has an **addresses** property. This property is an **array** of Address Objects.
@@ -144,7 +144,7 @@ Responds with an *object* that has an **addresses** property. This property is a
 Usage:
 
 ```
-wallet.getAddress(address, options);
+wallet.getAddress(address, options)
 ```
 
 Responds with an address object of the specified address.
@@ -162,7 +162,7 @@ Options (optional):
 Usage:
 
 ```js
-wallet.newAddress(options);
+wallet.newAddress(options)
 ```
 
 Creates a new address. Responds with a partial Address Object (contains just the **address** property, also contains the **label** property if a label parameter was passed).
@@ -176,7 +176,7 @@ Options (optional):
 Usage:
 
 ```js
-wallet.archiveAddress(address);
+wallet.archiveAddress(address)
 ```
 
 Archives a specific address. Responds with an object that has the property **archived**, which is set to the name of the archived address (*string*).
@@ -190,7 +190,7 @@ Parameters:
 Usage:
 
 ```js
-wallet.unarchiveAddress(address);
+wallet.unarchiveAddress(address)
 ```
 
 Unarchives a specific address. Responds with an object that has the property **active**, which is set to the name of the unarchived address (*string*).
@@ -204,7 +204,7 @@ Parameters:
 Usage:
 
 ```js
-wallet.consolidate(options);
+wallet.consolidate(options)
 ```
 
 Consolidates addresses that have not received transactions recently into a single new address, which is automatically added to the wallet. Responds with an object that has the property **consolidated**, which is set to an array of the names of all addresses that were consolidated (*string*).

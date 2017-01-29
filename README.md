@@ -13,7 +13,7 @@ $ npm install --save blockchain.info
 Importing:
 
 ```js
-var blockchain = require('blockchain.info');
+var blockchain = require('blockchain.info')
 ```
 
 ## Responses
@@ -37,11 +37,11 @@ You can access sub-modules from the properties of the imported main module, or b
 Individual import:
 
 ```js
-var MyWallet = require('blockchain.info/MyWallet');
+var MyWallet = require('blockchain.info/MyWallet')
 ```
 
 Property import:
 
 ```js
-var MyWallet = require('blockchain.info').MyWallet;
+var MyWallet = require('blockchain.info').MyWallet
 ```

@@ -23,7 +23,16 @@
     "bitcoin"
   ],
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha ./**/spec.js"
+    "test": "node_modules/.bin/standard && node_modules/.bin/mocha ./**/spec.js"
+  },
+  "standard": {
+    "ignore": [
+      "*.md"
+    ],
+    "global": [
+      "describe",
+      "it"
+    ]
   },
   "dependencies": {
     "q": "^1.4.1",
@@ -38,6 +47,7 @@
   "devDependencies": {
     "chai": "3.4.*",
     "mocha": "2.3.*",
-    "nock": "5.2.*"
+    "nock": "5.2.*",
+    "standard": "~8.6.0"
   }
 }

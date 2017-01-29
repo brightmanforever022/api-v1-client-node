@@ -5,7 +5,7 @@ Get this current bitcoin exchange rates. [View full API documentation](https://b
 ## Importing
 
 ```js
-var exchange = require('blockchain.info/exchange');
+var exchange = require('blockchain.info/exchange')
 ```
 
 ## Methods
@@ -17,7 +17,7 @@ All methods accept an options *Object* parameter that can include an `apiCode` p
 Usage:
 
 ```js
-exchange.getTicker(options);
+exchange.getTicker(options)
 ```
 
 Gets the market price of BTC compared to world currencies. Without any options specified, it responds with a JSON object that has currency codes as keys.
@@ -31,7 +31,7 @@ Options (optional):
 Usage:
 
 ```js
-exchange.fromBTC(amount, currency, options);
+exchange.fromBTC(amount, currency, options)
 ```
 
 Gets the historical market price of the requested BTC amount at the requested time. Responds with the value in *number* format.
@@ -44,13 +44,13 @@ Required Parameters:
 Options (optional):
 
   * `time` - the historical date (milliseconds since Unix epoch, *number*)
-  
+
 ### toBTC
 
 Usage:
 
 ```js
-exchange.toBTC(amount, currency, options);
+exchange.toBTC(amount, currency, options)
 ```
 
 Converts an amount of a given currency to BTC. Responds with a number in *string* format.

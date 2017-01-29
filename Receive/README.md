@@ -6,7 +6,7 @@ Receive custom payment notifications. [View full API documentation](https://bloc
 ## Importing
 
 ```js
-var Receive = require('blockchain.info/Receive');
+var Receive = require('blockchain.info/Receive')
 ```
 
 ## Usage
@@ -14,7 +14,7 @@ var Receive = require('blockchain.info/Receive');
 Creating a new instance for receiving payments:
 
 ```js
-var myReceive = new Receive(xpub, callback, key);
+var myReceive = new Receive(xpub, callback, key)
 ```
 
 Parameters (required):
@@ -28,7 +28,7 @@ Parameters (required):
 ### generate
 
 ```js
-myReceive.generate(query);
+myReceive.generate(query)
 ```
 
 Generate the next address for the xpub used to initialize `myReceive`.

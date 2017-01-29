@@ -5,7 +5,7 @@ Get statistics and historical chart data for the bitcoin network. [View full API
 ## Importing
 
 ```js
-var statistics = require('blockchain.info/statistics');
+var statistics = require('blockchain.info/statistics')
 ```
 
 ## Methods
@@ -17,10 +17,10 @@ All method options can include an `apiCode` property to prevent hitting request 
 Usage:
 
 ```js
-statistics.get(options);
+statistics.get(options)
 ```
 
-Responds with a json *object* containing an overview of many Bitcoin statistics unless the `stat` option is specified. 
+Responds with a json *object* containing an overview of many Bitcoin statistics unless the `stat` option is specified.
 View an example response [here](https://api.blockchain.info/stats).
 
 Options (optional):
@@ -32,7 +32,7 @@ Options (optional):
 Usage:
 
 ```js
-statistics.getChartData(chartType, options);
+statistics.getChartData(chartType, options)
 ```
 
 Responds with a json *object* that has a `values` property set to an *array* of chart coordinate objects in the form: {x:<*number*>,y:<*number*>}.
@@ -50,7 +50,7 @@ Options:
 Usage:
 
 ```js
-statistics.getPoolData(options);
+statistics.getPoolData(options)
 ```
 
 Responds with a json *object* containing mining pools and their total blocks mined in the last 4 days.

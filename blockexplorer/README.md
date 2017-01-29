@@ -5,7 +5,7 @@ Get the latest data regarding the block chain. [View full API documentation](htt
 ## Importing
 
 ```js
-var blockexplorer = require('blockchain.info/blockexplorer');
+var blockexplorer = require('blockchain.info/blockexplorer')
 ```
 
 ## Methods
@@ -17,7 +17,7 @@ All method options can include an `apiCode` property to prevent hitting request 
 Usage:
 
 ```js
-blockexplorer.getBlock(blockId, options);
+blockexplorer.getBlock(blockId, options)
 ```
 
 Get a single block based on a block index or hash. Returns a `Block` object.
@@ -27,7 +27,7 @@ Get a single block based on a block index or hash. Returns a `Block` object.
 Usage:
 
 ```js
-blockexplorer.getTx(txId, options);
+blockexplorer.getTx(txId, options)
 ```
 
 Get a single transaction based on a transaction index or hash. Returns a `Transaction` object.
@@ -37,7 +37,7 @@ Get a single transaction based on a transaction index or hash. Returns a `Transa
 Usage:
 
 ```js
-blockexplorer.getBlockHeight(height, options);
+blockexplorer.getBlockHeight(height, options)
 ```
 
 Get an array of blocks at the specified height. Returns an array of `Block` objects.
@@ -47,7 +47,7 @@ Get an array of blocks at the specified height. Returns an array of `Block` obje
 Usage:
 
 ```js
-blockexplorer.getAddress(address, options);
+blockexplorer.getAddress(address, options)
 ```
 
 Get a single address and its transactions. Returns an `Address` object.
@@ -62,7 +62,7 @@ Options (optional):
 Usage:
 
 ```js
-blockexplorer.getMultiAddress(addresses, options);
+blockexplorer.getMultiAddress(addresses, options)
 ```
 
 Get information on multiple addresses.
@@ -77,7 +77,7 @@ Options (optional):
 Usage:
 
 ```js
-blockexplorer.getUnspentOutputs(address, options);
+blockexplorer.getUnspentOutputs(address, options)
 ```
 
 Get an array of unspent outputs for an address. Returns an *array* of `UnspentOutput` objects.
@@ -87,7 +87,7 @@ Get an array of unspent outputs for an address. Returns an *array* of `UnspentOu
 Usage:
 
 ```js
-blockexplorer.getLatestBlock(options);
+blockexplorer.getLatestBlock(options)
 ```
 
 Get the latest block on the main chain. Returns a `LatestBlock` object.
@@ -97,7 +97,7 @@ Get the latest block on the main chain. Returns a `LatestBlock` object.
 Usage:
 
 ```js
-blockexplorer.getUncomfirmedTx(options);
+blockexplorer.getUncomfirmedTx(options)
 ```
 
 Get a list of currently unconfirmed transactions. Returns an array of `Transaction` objects.
@@ -107,7 +107,7 @@ Get a list of currently unconfirmed transactions. Returns an array of `Transacti
 Usage:
 
 ```js
-blockexplorer.getBlocks(time, options);
+blockexplorer.getBlocks(time, options)
 ```
 
 Get a list of blocks for a specific day. Returns an array of `SimpleBlock` objects.

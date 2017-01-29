@@ -34,7 +34,7 @@ Usage:
 exchange.fromBTC(amount, currency, options);
 ```
 
-Gets the historical market price of the requested BTC amount at the requested time. Responds with the value in *string* format.
+Gets the historical market price of the requested BTC amount at the requested time. Responds with the value in *number* format.
 
 Required Parameters:
 

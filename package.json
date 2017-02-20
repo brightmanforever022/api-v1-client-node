@@ -42,7 +42,7 @@
     "url-pattern": "^0.10.2"
   },
   "optionalDependencies": {
-    "ws": "^0.8.0"
+    "ws": "^1.1.2"
   },
   "devDependencies": {
     "chai": "3.4.*",

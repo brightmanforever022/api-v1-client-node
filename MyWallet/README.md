@@ -32,7 +32,7 @@ Example:
 ```js
 var options = { apiCode: 'myAPICode', apiHost: 'http://localhost:3000' }
 var wallet = new MyWallet('myIdentifier', 'myPassword123', options)
-wallet.getBalance().then(function (balance) { console.log('My balance is %d!', balance); })
+wallet.getBalance().then(function (response) { console.log('My balance is %d!', response.balance); })
 ```
 
 ## Response objects

@@ -92,10 +92,10 @@ Parameters:
 
   * `address` - bitcoin address to send to
   * `amount` - amount **in satoshi** to send
+  * `from` - send from a specific Bitcoin address or account index (*string*|*number*, required when sending from an account)
 
 Options (optional):
 
-  * `from` - send from a specific Bitcoin address (*string*)
   * `fee` - transaction fee value **in satoshi** (*number*, defaults to 0.0001btc)
   * `note` - public note to include with transaction (*string*, transaction must be > 0.005btc)
 
@@ -112,10 +112,10 @@ Sends bitcoin to multiple addresses. Responds with a Payment Response Object.
 Parameters:
 
   * `recipients` - *object* with properties/values in the format: "receivingAddress":amount (required)
+  * `from` - send from a specific Bitcoin address or account index (*string*|*number*, required when sending from an account)
 
 Options (optional):
 
-  * `from` - send from a specific Bitcoin address (*string*)
   * `fee` - transaction fee value **in satoshi** (*number*, defaults to 0.0001btc)
   * `note` - public note to include with transaction (*string*, transactions must be > 0.005btc)
 

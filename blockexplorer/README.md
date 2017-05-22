@@ -196,7 +196,7 @@ A description of each of the objects that may be passed into the callback's `dat
 * **script**: *string*
 * **value**: *number*
 * **value_hex**: *string*
-* **confirmations*: *number*
+* **confirmations**: *number*
 
 ### LatestBlock Object
 

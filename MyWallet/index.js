@@ -47,6 +47,53 @@ MyWallet.prototype.getBalance = function () {
   return this.api.post('balance', { guid: this.guid }, params)
 }
 
+MyWallet.prototype.enableHD = function () {
+  var params = this.getParams()
+  return this.api.post('enableHD', { guid: this.guid }, params)
+}
+
+MyWallet.prototype.listAccounts = function () {
+  var params = this.getParams()
+  return this.api.post('listAccounts', { guid: this.guid }, params)
+}
+
+MyWallet.prototype.listXPubs = function () {
+  var params = this.getParams()
+  return this.api.post('listXPubs', { guid: this.guid }, params)
+}
+
+MyWallet.prototype.createAccount = function (options) {
+  options = options || {}
+  var params = this.getParams()
+  params.label = options.label
+  return this.api.post('createAccount', { guid: this.guid }, params)
+}
+
+MyWallet.prototype.getAccount = function (xpubOrIndex) {
+  var params = this.getParams()
+  return this.api.post('getAccount', { guid: this.guid, account: xpubOrIndex }, params)
+}
+
+MyWallet.prototype.getAccountReceiveAddress = function (xpubOrIndex) {
+  var params = this.getParams()
+  return this.api.post('getAccountReceiveAddress', { guid: this.guid, account: xpubOrIndex }, params)
+}
+
+MyWallet.prototype.getAccountBalance = function (xpubOrIndex) {
+  var params = this.getParams()
+  return this.api.post('getAccountBalance', { guid: this.guid, account: xpubOrIndex }, params)
+}
+
+MyWallet.prototype.archiveAccount = function (xpubOrIndex) {
+  var params = this.getParams()
+  return this.api.post('archiveAccount', { guid: this.guid, account: xpubOrIndex }, params)
+}
+
+MyWallet.prototype.unarchiveAccount = function (xpubOrIndex) {
+  var params = this.getParams()
+  return this.api.post('unarchiveAccount', { guid: this.guid, account: xpubOrIndex }, params)
+}
+
 MyWallet.prototype.listAddresses = function () {
   var params = this.getParams()
   return this.api.post('list', { guid: this.guid }, params)
@@ -88,7 +135,8 @@ MyWallet.create = function (password, apiCode, options) {
     api_code: apiCode,
     priv: options.priv,
     label: options.label,
-    email: options.email
+    email: options.email,
+    hd: options.hd
   }
   return api.post('create', {}, params).then(function (response) {
     var walletOptions = { apiCode: apiCode, apiHost: options.apiHost }

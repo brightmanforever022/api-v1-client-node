@@ -50,6 +50,19 @@ Address Object Properties:
   * `label` - the address label (*string* or *null*)
   * `total_received` - the total satoshi ever received by the address (*number*)
 
+Account Object Properties:
+
+  * `balance` - the account balance in satoshi (*number*)
+  * `label` - the account label (*string*)
+  * `index` - the account index (*number*)
+  * `archived` - indicates if the account is archived or not (*boolean*)
+  * `extendedPublicKey` - account xpub (*string*)
+  * `extendedPrivateKey` - account xpriv (*string*)
+  * `receiveIndex` - current account receive index (*number*)
+  * `lastUsedReceiveIndex` - the last used receive index (*number*)
+  * `receivingAddressLabels` - receive address labels (*[{number: string}]*)
+  * `receiveAddress` - current receive address (*string*)
+
 ## Class Methods
 
 ### create
@@ -69,10 +82,11 @@ Parameters:
 
 Options:
 
-  * `priv` - private key to use for the wallet's first bitcoin address
-  * `label` - label to give to the wallet's first bitcoin address
-  * `email` - email to associate with the new Blockchain Wallet
-  * `apiHost` - set the host for the api calls to the newly created wallet (required)
+  * `priv` - private key to use for the wallet's first bitcoin address (*string*)
+  * `label` - label to give to the wallet's first bitcoin address (*string*)
+  * `email` - email to associate with the new Blockchain Wallet (*string*)
+  * `hd` - create the new wallet as an hd wallet (*boolean*, recommended)
+  * `apiHost` - set the host for the api calls to the newly created wallet (*string*, required)
 
 ## Instance Methods
 
@@ -128,6 +142,120 @@ wallet.getBalance()
 ```
 
 Responds with the entire balance of a wallet, as a number, **in satoshi**.
+
+### Upgrade to HD wallet
+
+Usage:
+
+```js
+wallet.enableHD()
+```
+
+Upgrades a legacy wallet to an HD wallet. Responds with an account object (the first account in the new HD wallet).
+
+### List HD accounts
+
+Usage:
+
+```js
+wallet.listAccounts()
+```
+
+Lists wallet HD accounts. Responds with an *array* of account objects.
+
+### List account xpubs
+
+Usage:
+
+```js
+wallet.listXPubs()
+```
+
+Lists wallet account xpubs. Responds with an *array* of xpub strings.
+
+### Create new HD account
+
+Usage:
+
+```js
+wallet.createAccount(options)
+```
+
+Creates a new HD account at the next unused account index. Responds with an account object.
+
+Options (optional)
+
+  * `label` - label to give the new account (*string*)
+
+### Get HD account
+
+Usage:
+
+```js
+wallet.getAccount(xpubOrIndex)
+```
+
+Gets a single HD account. Responds with an account object.
+
+Parameters:
+
+  * `xpubOrIndex` - the account xpub or index (*string*|*number*, required)
+
+### Get HD account receive address
+
+Usage:
+
+```js
+wallet.getAccountReceiveAddress(xpubOrIndex)
+```
+
+Gets the next unused receive address for an HD account. Responds with an *object* containing an **address** property.
+
+Parameters:
+
+  * `xpubOrIndex` - the account xpub or index (*string*|*number*, required)
+
+### Get HD account balance
+
+Usage:
+
+```js
+wallet.getAccountBalance(xpubOrIndex)
+```
+
+Gets the balance of an HD account. Responds with an *object* containing a **balance** property.
+
+Parameters:
+
+  * `xpubOrIndex` - the account xpub or index (*string*|*number*, required)
+
+### Archive HD account
+
+Usage:
+
+```js
+wallet.archiveAccount(xpubOrIndex)
+```
+
+Archives an HD account. Responds with an account object.
+
+Parameters:
+
+  * `xpubOrIndex` - the account xpub or index (*string*|*number*, required)
+
+### Unarchive HD account
+
+Usage:
+
+```js
+wallet.unarchiveAccount(xpubOrIndex)
+```
+
+Unarchives an HD account. Responds with an account object.
+
+Parameters:
+
+  * `xpubOrIndex` - the account xpub or index (*string*|*number*, required)
 
 ### List wallet addresses
 

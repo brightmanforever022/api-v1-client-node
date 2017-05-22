@@ -39,6 +39,10 @@ wallet.getBalance().then(function (response) { console.log('My balance is %d!', 
 
 Payment Response Object Properties:
 
+  * `to` - payment destinations (*[string|number]*)
+  * `amounts` - payment amounts (*[number]*)
+  * `from` - from account / address (*string|number*)
+  * `fee` - final fee paid in satoshi (*number*)
   * `message` - message confirming the transaction (*string*)
   * `tx_hash` - the hash of the transaction (*string*)
   * `notice` - notice, not always returned (*string*)
@@ -111,7 +115,7 @@ Parameters:
 Options (optional):
 
   * `fee` - transaction fee value **in satoshi** (*number*, defaults to 0.0001btc)
-  * `note` - public note to include with transaction (*string*, transaction must be > 0.005btc)
+  * `feePerByte` - transaction fee **in satoshi per byte** (*number*, recommended)
 
 ### Send to multiple addresses
 
@@ -131,7 +135,7 @@ Parameters:
 Options (optional):
 
   * `fee` - transaction fee value **in satoshi** (*number*, defaults to 0.0001btc)
-  * `note` - public note to include with transaction (*string*, transactions must be > 0.005btc)
+  * `feePerByte` - transaction fee **in satoshi per byte** (*number*, recommended)
 
 ### Get wallet balance
 

@@ -39,6 +39,10 @@ wallet.getBalance().then(function (response) { console.log('My balance is %d!', 
 
 Payment Response Object Properties:
 
+  * `to` - payment destinations (*[string|number]*)
+  * `amounts` - payment amounts (*[number]*)
+  * `from` - from account / address (*string|number*)
+  * `fee` - final fee paid in satoshi (*number*)
   * `message` - message confirming the transaction (*string*)
   * `tx_hash` - the hash of the transaction (*string*)
   * `notice` - notice, not always returned (*string*)

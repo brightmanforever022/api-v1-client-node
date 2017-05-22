@@ -79,13 +79,6 @@ MyWallet.prototype.unarchiveAddress = function (address) {
   return this.api.post('unarchive', { guid: this.guid }, params)
 }
 
-MyWallet.prototype.consolidate = function (options) {
-  options = options || {}
-  var params = this.getParams()
-  params.days = options.days || 60
-  return this.api.post('consolidate', { guid: this.guid }, params)
-}
-
 MyWallet.create = function (password, apiCode, options) {
   options = options || {}
   if (!options.apiHost) throw new Error('Missing required option: apiHost')

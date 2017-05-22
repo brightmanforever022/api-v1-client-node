@@ -10,6 +10,5 @@ module.exports = {
   addrBalance: new UrlPattern('/merchant/:guid/address_balance'),
   newAddress: new UrlPattern('/merchant/:guid/new_address'),
   archive: new UrlPattern('/merchant/:guid/archive_address'),
-  unarchive: new UrlPattern('/merchant/:guid/unarchive_address'),
-  consolidate: new UrlPattern('/merchant/:guid/auto_consolidate')
+  unarchive: new UrlPattern('/merchant/:guid/unarchive_address')
 }

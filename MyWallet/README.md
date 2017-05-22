@@ -198,17 +198,3 @@ Unarchives a specific address. Responds with an object that has the property **a
 Parameters:
 
   * `address` - the name of the address to unarchive (*string*)
-
-### Consolidating addresses
-
-Usage:
-
-```js
-wallet.consolidate(options)
-```
-
-Consolidates addresses that have not received transactions recently into a single new address, which is automatically added to the wallet. Responds with an object that has the property **consolidated**, which is set to an array of the names of all addresses that were consolidated (*string*).
-
-Options (optional):
-
-  * `days` - addresses which have not received any transactions in at least this many days will be consolidated (*number*, defaults to 60)

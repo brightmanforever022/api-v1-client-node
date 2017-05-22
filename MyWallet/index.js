@@ -28,7 +28,6 @@ MyWallet.prototype.send = function (address, amount, options) {
   params.amount = amount
   params.from = options.from
   params.fee = options.fee
-  params.note = options.note
   return this.api.post('payment', { guid: this.guid }, params)
 }
 
@@ -38,7 +37,6 @@ MyWallet.prototype.sendMany = function (recipients, options) {
   params.recipients = JSON.stringify(recipients)
   params.from = options.from
   params.fee = options.fee
-  params.note = options.note
   return this.api.post('sendmany', { guid: this.guid }, params)
 }
 

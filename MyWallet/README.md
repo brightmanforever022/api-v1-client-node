@@ -97,6 +97,7 @@ Parameters:
 Options (optional):
 
   * `fee` - transaction fee value **in satoshi** (*number*, defaults to 0.0001btc)
+  * `feePerByte` - transaction fee **in satoshi per byte** (*number*, recommended)
 
 ### Send to multiple addresses
 
@@ -116,6 +117,7 @@ Parameters:
 Options (optional):
 
   * `fee` - transaction fee value **in satoshi** (*number*, defaults to 0.0001btc)
+  * `feePerByte` - transaction fee **in satoshi per byte** (*number*, recommended)
 
 ### Get wallet balance
 

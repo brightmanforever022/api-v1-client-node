@@ -10,5 +10,5 @@ module.exports = {
   balance: new UrlPattern('/balance?active=:active(&api_code=:apiCode)'),
   latestblock: new UrlPattern('/latestblock(?api_code=:apiCode)'),
   unconfTxs: new UrlPattern('/unconfirmed-transactions?format=json(&api_code=:apiCode)'),
-  blocks: new UrlPattern('/blocks/:time?format=json(&api_code=:apiCode)'),
+  blocks: new UrlPattern('/blocks/:time?format=json(&api_code=:apiCode)')
 }

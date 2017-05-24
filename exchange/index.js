@@ -24,11 +24,11 @@ function getTicker (options) {
 function fromBTC (amount, currency, options) {
   options = options || {}
   return api.request('frombtc', { value: amount, time: options.time || 0, currency: currency, apiCode: options.apiCode })
-    .then(function (rvalue) { return parseFloat(rvalue.replace(',', '') })
+    .then(function (rvalue) { return parseFloat(rvalue.toString().replace(',', '')) })
 }
 
 function toBTC (amount, currency, options) {
   options = options || {}
-  return api.request('tobtc', { value: amount/100000000, currency: currency, apiCode: options.apiCode })
-    .then(function (rvalue) { return parseFloat(rvalue.replace(',', '') })
+  return api.request('tobtc', { value: amount / 100000000, currency: currency, apiCode: options.apiCode })
+    .then(function (rvalue) { return parseFloat(rvalue.toString().replace(',', '')) })
 }

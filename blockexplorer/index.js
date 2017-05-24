@@ -12,7 +12,7 @@ module.exports = {
   getBalance: getBalance,
   getLatestBlock: getLatestBlock,
   getUnconfirmedTx: getUnconfirmedTx,
-  getBlocks: getBlocks,
+  getBlocks: getBlocks
 }
 
 function getBlock (blockHash, options) {

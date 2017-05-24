@@ -44,6 +44,7 @@ Parameters:
 Options:
 
   * `timespan` - interval for which to fetch data, can be set to `'all'` or a period of time formatted as `'<time><unit>'`, ex: `'2years'` or `'90d'` (*string*)
+  * `rollingAverage` - duration over which the data should be averaged, can be set to a period of time formatted as `'<time><unit>'`, ex: `'2years'` or `'90d'` (*string*)
 
 ### getPoolData
 

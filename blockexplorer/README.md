@@ -82,6 +82,21 @@ blockexplorer.getUnspentOutputs(address, options)
 
 Get an array of unspent outputs for an address. Returns an *array* of `UnspentOutput` objects.
 
+Options (optional):
+
+* `confirmations` - the minimum number of confirmations of the outputs to be included (*number*)
+* `limit` - the number of outputs to limit the response to (*number*)
+
+### getBalance
+
+Usage:
+
+```js
+blockexplorer.getBalance(address, options)
+```
+
+Get an array of individual address balance for given addresses. Returns an *array* of `Balance` objects.
+
 ### getLatestBlock
 
 Usage:
@@ -111,16 +126,6 @@ blockexplorer.getBlocks(time, options)
 ```
 
 Get a list of blocks for a specific day. Returns an array of `SimpleBlock` objects.
-
-### getInventoryData
-
-Usage:
-
-```
-blockexplorer.getInventoryData(hash, options);
-```
-
-Get inventory data for recent blocks and addresses (up to 1 hour old). Returns an `InventoryData` object.
 
 ## Response Object Properties
 
@@ -198,6 +203,11 @@ A description of each of the objects that may be passed into the callback's `dat
 * **value_hex**: *string*
 * **confirmations**: *number*
 
+### Balance Object
+* **final_balance**: *number*
+* **n_tx**: *number*
+* **total_received**: *number*
+
 ### LatestBlock Object
 
 * **hash**: *string*
@@ -212,13 +222,3 @@ A description of each of the objects that may be passed into the callback's `dat
 * **hash**: *string*
 * **time**: *number*
 * **main_chain**: *boolean*
-
-### InventoryData Object
-
-* **hash**: *string*
-* **type**: *string*
-* **initial_time**: *number*
-* **initial_ip**: *string*
-* **nconnected**: *number*
-* **relayed_count**: *number*
-* **relayed_percent**: *number*

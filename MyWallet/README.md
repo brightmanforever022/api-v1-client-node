@@ -285,10 +285,6 @@ Parameters:
 
   * `address` - the name of the address (*string*)
 
-Options (optional):
-
-  * `confirmations` - minimum number of confirmations to check for (*number*, defaults to 6)
-
 ### Create new address
 
 Usage:

@@ -3,7 +3,7 @@ var q = require('q')
 var UrlPattern = require('url-pattern')
 
 var endpoints = {
-  charts: new UrlPattern('/charts/:type?format=json(&api_code=:apiCode)(&timespan=:timespan)'),
+  charts: new UrlPattern('/charts/:type?format=json(&api_code=:apiCode)(&timespan=:timespan)(&rollingAverage=:rollingAverage)'),
   pools: new UrlPattern('/pools?format=json(&timespan=:timespan\\days)(&api_code=:apiCode)'),
   stats: new UrlPattern('/stats?format=json(&api_code=:apiCode)')
 }
@@ -29,7 +29,7 @@ function get (options) {
 function getChartData (chartType, options) {
   options = options || {}
   return api
-    .request('charts', { type: chartType, apiCode: options.apiCode, timespan: options.timespan })
+    .request('charts', { type: chartType, apiCode: options.apiCode, timespan: options.timespan, rollingAverage: options.rollingAverage })
     .then(function (data) { return data.values })
 }
 

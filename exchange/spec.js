@@ -62,7 +62,7 @@ describe('exchange', function () {
     it('should convert the currency', function (done) {
       exchange.toBTC(1000, 'USD')
         .then(function (data) {
-          expect(data).to.equal('1234.1234')
+          expect(data).to.equal(1234.1234)
           done()
         })
         .catch(done)

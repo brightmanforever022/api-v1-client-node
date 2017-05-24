@@ -9,10 +9,10 @@ module.exports = {
   getAddress: getAddress,
   getMultiAddress: getMultiAddress,
   getUnspentOutputs: getUnspentOutputs,
+  getBalance: getBalance,
   getLatestBlock: getLatestBlock,
   getUnconfirmedTx: getUnconfirmedTx,
-  getBlocks: getBlocks,
-  getInventoryData: getInventoryData
+  getBlocks: getBlocks
 }
 
 function getBlock (blockHash, options) {
@@ -46,7 +46,13 @@ function getMultiAddress (addresses, options) {
 function getUnspentOutputs (addresses, options) {
   options = options || {}
   addresses = (addresses instanceof Array ? addresses : [addresses]).join('|')
-  return api.request('unspent', { active: addresses, apiCode: options.apiCode })
+  return api.request('unspent', { active: addresses, confirmations: options.confirmations, limit: options.limit, apiCode: options.apiCode })
+}
+
+function getBalance (addresses, options) {
+  options = options || {}
+  addresses = (addresses instanceof Array ? addresses : [addresses]).join('|')
+  return api.request('balance', { active: addresses, apiCode: options.apiCode })
 }
 
 function getLatestBlock (options) {
@@ -62,9 +68,4 @@ function getUnconfirmedTx (options) {
 function getBlocks (time, options) {
   options = options || {}
   return api.request('blocks', { time: time, apiCode: options.apiCode })
-}
-
-function getInventoryData (hash, options) {
-  options = options || {}
-  return api.request('inv', { hash: hash, apiCode: options.apiCode })
 }

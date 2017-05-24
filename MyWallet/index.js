@@ -103,7 +103,6 @@ MyWallet.prototype.getAddress = function (address, options) {
   options = options || {}
   var params = this.getParams()
   params.address = address
-  params.confirmations = options.confirmations || 6
   return this.api.post('addrBalance', { guid: this.guid }, params)
 }
 

@@ -135,6 +135,7 @@ MyWallet.create = function (password, apiCode, options) {
     priv: options.priv,
     label: options.label,
     email: options.email,
+    second_password: options.secondPassword,
     hd: options.hd
   }
   return api.post('create', {}, params).then(function (response) {

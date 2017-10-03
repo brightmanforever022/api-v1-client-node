@@ -5,13 +5,19 @@ var endpoints = {
   pushtx: new UrlPattern('/pushtx')
 }
 
-var api = new API('https://blockchain.info', endpoints)
+module.exports = createWithApi(API.createUsingNetwork(0, endpoints))
 
-module.exports = {
-  pushtx: pushtx
+module.exports.usingNetwork = function (network) {
+  return createWithApi(API.createUsingNetwork(network, endpoints))
 }
 
-function pushtx (txHex, options) {
+function createWithApi (api) {
+  return {
+    pushtx: pushtx.bind(null, api)
+  }
+}
+
+function pushtx (api, txHex, options) {
   options = options || {}
   var body = { tx: txHex, api_code: options.apiCode }
   return api.post('pushtx', {}, body)

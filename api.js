@@ -31,6 +31,21 @@ API.prototype.post = function (api, options, body) {
   }
 }
 
+API.createUsingNetwork = function (network, endpoints) {
+  return new API(API.apiUrlForNetwork(network), endpoints)
+}
+
+API.apiUrlForNetwork = function (network) {
+  switch (network) {
+    case 0:
+      return 'https://blockchain.info'
+    case 5:
+      return 'https://testnet5.blockchain.info'
+    default:
+      throw new Error('Invalid network: ' + network)
+  }
+}
+
 module.exports = API
 
 function parseResponse (response) {

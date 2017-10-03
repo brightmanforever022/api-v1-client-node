@@ -12,9 +12,10 @@ try {
 
 util.inherits(Socket, EventEmitter)
 
-function Socket () {
+function Socket (options) {
   EventEmitter.call(this)
-  var wsUrl = 'wss://ws.blockchain.info/inv'
+  options = options || { network: 0 }
+  var wsUrl = Socket.wsUrlForNetwork(options.network)
   var socket = new WebSocket(wsUrl)
   this.close = socket.close.bind(socket)
   this.getReadyState = function () { return socket.readyState }
@@ -72,6 +73,17 @@ Socket.prototype.onBlock = function (callback) {
   this.op('blocks_sub')
   this.on('block', callback)
   return this
+}
+
+Socket.wsUrlForNetwork = function (network) {
+  switch (network) {
+    case 0:
+      return 'wss://ws.blockchain.info/inv'
+    case 5:
+      return 'wss://ws.testnet.blockchain.info/inv'
+    default:
+      throw new Error('Invalid network: ' + network)
+  }
 }
 
 function extend (o, p) {

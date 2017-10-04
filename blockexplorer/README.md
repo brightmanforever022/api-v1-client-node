@@ -8,6 +8,13 @@ Get the latest data regarding the block chain. [View full API documentation](htt
 var blockexplorer = require('blockchain.info/blockexplorer')
 ```
 
+### Usage with Testnet
+
+```js
+// import using testnet 5 network
+var blockexplorer = require('blockchain.info/blockexplorer').usingNetwork(5)
+```
+
 ## Methods
 
 All method options can include an `apiCode` property to prevent hitting request limits.

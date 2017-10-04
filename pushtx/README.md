@@ -8,6 +8,13 @@ Broadcast raw transactions to the bitcoin network.
 var pushtx = require('blockchain.info/pushtx')
 ```
 
+### Usage with Testnet
+
+```js
+// import using testnet 5 network
+var pushtx = require('blockchain.info/pushtx').usingNetwork(5)
+```
+
 ## Methods
 
 All method options can include an `apiCode` property to prevent hitting request limits.

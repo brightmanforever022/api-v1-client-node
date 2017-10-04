@@ -17,6 +17,13 @@ An instance of `Socket` must be instantiated before using it:
 var mySocket = new Socket()
 ```
 
+### Usage with Testnet
+
+```js
+// initialize with testnet 5 network
+var mySocket = new Socket({ network: 5 })
+```
+
 ## Methods
 
 ### close

@@ -33,7 +33,6 @@ function getTx (api, txHash, options) {
 }
 
 function getBlockHeight (api, blockHeight, options) {
-  console.log('calling with', api.rootUrl)
   options = options || {}
   return api.request('blockHeight', { height: blockHeight, apiCode: options.apiCode })
 }

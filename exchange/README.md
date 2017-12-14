@@ -57,5 +57,5 @@ Converts an amount of a given currency to BTC. Responds with a number in *string
 
 Parameters:
 
-  * `amount` - the amount to convert (satoshi, *number*)
+  * `amount` - the amount to convert (*number*)
   * `currency` - the code of the currency to convert from (currency code, *string*)

@@ -29,6 +29,6 @@ function fromBTC (amount, currency, options) {
 
 function toBTC (amount, currency, options) {
   options = options || {}
-  return api.request('tobtc', { value: amount / 100000000, currency: currency, apiCode: options.apiCode })
+  return api.request('tobtc', { value: amount, currency: currency, apiCode: options.apiCode })
     .then(function (rvalue) { return parseFloat(rvalue.toString().replace(',', '')) })
 }

@@ -1,6 +1,7 @@
 {
   "name": "blockchain.info",
   "version": "2.10.1",
+  "license": "MIT",
   "engine": "node >= 0.10.36",
   "description": "A Node implementation for accessing the Blockchain.info API.",
   "author": {

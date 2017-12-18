@@ -11,8 +11,8 @@ var blockexplorer = require('blockchain.info/blockexplorer')
 ### Usage with Testnet
 
 ```js
-// import using testnet 5 network
-var blockexplorer = require('blockchain.info/blockexplorer').usingNetwork(5)
+// import using testnet 3 network
+var blockexplorer = require('blockchain.info/blockexplorer').usingNetwork(3)
 ```
 
 ## Methods

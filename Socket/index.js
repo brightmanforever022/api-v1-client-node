@@ -79,8 +79,8 @@ Socket.wsUrlForNetwork = function (network) {
   switch (network) {
     case 0:
       return 'wss://ws.blockchain.info/inv'
-    case 5:
-      return 'wss://ws.testnet.blockchain.info/inv'
+    case 3:
+      return 'wss://ws.blockchain.info/testnet3/inv'
     default:
       throw new Error('Invalid network: ' + network)
   }

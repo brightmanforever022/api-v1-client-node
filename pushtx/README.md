@@ -11,8 +11,8 @@ var pushtx = require('blockchain.info/pushtx')
 ### Usage with Testnet
 
 ```js
-// import using testnet 5 network
-var pushtx = require('blockchain.info/pushtx').usingNetwork(5)
+// import using testnet 3 network
+var pushtx = require('blockchain.info/pushtx').usingNetwork(3)
 ```
 
 ## Methods

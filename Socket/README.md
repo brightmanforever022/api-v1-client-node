@@ -20,8 +20,8 @@ var mySocket = new Socket()
 ### Usage with Testnet
 
 ```js
-// initialize with testnet 5 network
-var mySocket = new Socket({ network: 5 })
+// initialize with testnet 3 network
+var mySocket = new Socket({ network: 3 })
 ```
 
 ## Methods

@@ -39,8 +39,8 @@ API.apiUrlForNetwork = function (network) {
   switch (network) {
     case 0:
       return 'https://blockchain.info'
-    case 5:
-      return 'https://testnet5.blockchain.info'
+    case 3:
+      return 'https://testnet.blockchain.info'
     default:
       throw new Error('Invalid network: ' + network)
   }

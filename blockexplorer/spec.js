@@ -12,8 +12,8 @@ describe('blockexplorer', function () {
     testWithExplorer(blockexplorer.usingNetwork(0), 'https://blockchain.info')
   })
 
-  describe('using explicit testnet5', () => {
-    testWithExplorer(blockexplorer.usingNetwork(5), 'https://testnet5.blockchain.info')
+  describe('using explicit testnet3', () => {
+    testWithExplorer(blockexplorer.usingNetwork(3), 'https://testnet.blockchain.info')
   })
 })
 

@@ -38,34 +38,70 @@ describe('exchange', function () {
   })
 
   describe('.fromBTC()', function () {
-    nock('https://blockchain.info')
-      .get('/frombtc')
-      .query(true)
-      .reply(200, '227.13')
+    describe('returning a number with a single comma from API', () => {
+      nock('https://blockchain.info')
+        .get('/frombtc')
+        .query(true)
+        .reply(200, '227.13')
 
-    it('should convert the currency', function (done) {
-      exchange.fromBTC(100000000, 'USD')
-        .then(function (response) {
-          expect(response).to.equal(227.13)
-          done()
-        })
-        .catch(done)
+      it('should convert the currency', function (done) {
+        exchange.fromBTC(100000000, 'USD')
+          .then(function (response) {
+            expect(response).to.equal(227.13)
+            done()
+          })
+          .catch(done)
+      })
+    })
+
+    describe('returning a number with multiple commas from API', () => {
+      nock('https://blockchain.info')
+        .get('/frombtc')
+        .query(true)
+        .reply(200, '1,234,227.13')
+
+      it('should convert the currency', function (done) {
+        exchange.fromBTC(100000000, 'USD')
+          .then(function (response) {
+            expect(response).to.equal(1234227.13)
+            done()
+          })
+          .catch(done)
+      })
     })
   })
 
   describe('.toBTC()', function () {
-    nock('https://blockchain.info')
-      .get('/tobtc')
-      .query(true)
-      .reply(200, '1,234.1234')
+    describe('returning a number with a single comma from API', () => {
+      nock('https://blockchain.info')
+        .get('/tobtc')
+        .query(true)
+        .reply(200, '1,234.1234')
 
-    it('should convert the currency', function (done) {
-      exchange.toBTC(1000, 'USD')
-        .then(function (data) {
-          expect(data).to.equal(1234.1234)
-          done()
-        })
-        .catch(done)
+      it('should convert the currency', function (done) {
+        exchange.toBTC(1000, 'USD')
+          .then(function (data) {
+            expect(data).to.equal(1234.1234)
+            done()
+          })
+          .catch(done)
+      })
+    })
+
+    describe('returning a number with multiple commas from API', () => {
+      nock('https://blockchain.info')
+        .get('/tobtc')
+        .query(true)
+        .reply(200, '1,234,567.1234')
+
+      it('should convert the currency', function (done) {
+        exchange.toBTC(1000, 'USD')
+          .then(function (data) {
+            expect(data).to.equal(1234567.1234)
+            done()
+          })
+          .catch(done)
+      })
     })
   })
 })

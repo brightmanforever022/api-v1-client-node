@@ -2,7 +2,7 @@
 
 An official Node module for interacting with the Blockchain.info API.
 
-## Getting started
+## Getting Started
 
 Installation via [npm](https://npmjs.com):
 
@@ -45,3 +45,7 @@ Property import:
 ```js
 var MyWallet = require('blockchain.info').MyWallet
 ```
+
+## Testnet Support
+This library supports Testnet for the `blockexplorer`, `pushtx`, and `Socket` modules. 
+You can find examples of how to use each in the specific modules README file.

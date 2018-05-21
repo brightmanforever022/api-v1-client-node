@@ -14,7 +14,8 @@ function Receive (xpub, callback, key, options) {
   this.xpub = xpub
   this.callback = callback
   this.key = key
-  this.gapLimit = options.gapLimit
+  // A gap limit greater than 20 is in violation of the BIP44 spec
+  this.gapLimit = options.__unsafe__gapLimit
 }
 
 Receive.prototype.generate = function (query) {

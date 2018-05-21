@@ -25,7 +25,7 @@ Parameters (required):
 
 Options (optional):
 
-  * `gapLimit` - manually override the limit of 20 unused addresses, see #30 before using
+  * `gapLimit` - manually override the limit of 20 unused addresses, see [#30](https://github.com/blockchain/api-v1-client-node/issues/30) before using
 
 ## Methods
 

@@ -25,7 +25,7 @@ Parameters (required):
 
 Options (optional):
 
-  * `__unsafe__gapLimit` - manually override the limit of 20 unused addresses, see [#30](https://github.com/blockchain/api-v1-client-node/issues/30) before using
+  * `__unsafe__gapLimit` - manually override the limit of 20 consecutive unused addresses, see [#30](https://github.com/blockchain/api-v1-client-node/issues/30) before using
 
 ## Methods
 

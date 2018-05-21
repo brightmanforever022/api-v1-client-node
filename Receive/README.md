@@ -46,3 +46,15 @@ Responds with an object containing the following properties:
   * `address` - the newly generated address, this is where your customer should send bitcoin
   * `index` - the index of the newly generated address
   * `callback` - the full callback url to which payment notifications will be sent
+
+### checkgap
+
+```js
+myReceive.checkgap()
+```
+
+Check the current address gap for the xpub used to initialize `myReceive`.
+
+Responds with an object containing the following properties:
+
+  * `gap` - the current address gap (number of consecutive unused addresses)

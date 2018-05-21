@@ -14,7 +14,7 @@ var Receive = require('blockchain.info/Receive')
 Creating a new instance for receiving payments:
 
 ```js
-var myReceive = new Receive(xpub, callback, key)
+var myReceive = new Receive(xpub, callback, key, options)
 ```
 
 Parameters (required):
@@ -22,6 +22,10 @@ Parameters (required):
   * `xpub` - a [BIP32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki) extended public key for generating bitcoin addresses
   * `callback` - the url that you want to receive payment notifications to (ex: `'http://mysite.com/receive'`)
   * `key` - your blockchain.info API v2 key (click [here](https://api.blockchain.info/v2/apikey/request/) to request a key)
+
+Options (optional):
+
+  * `gapLimit` - manually override the limit of 20 unused addresses, see #30 before using
 
 ## Methods
 
